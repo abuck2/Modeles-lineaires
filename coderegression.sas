@@ -28,14 +28,114 @@ data modlin.data2;
 		  citympg
 		  highwaympg
 		  price;
-	if cmiss(of _all_) =0;
-run;
-proc export data=modlin.data
-	outfile = "&path/automobileclean.csv"
-	dbms=csv;
+	drop symboling normalizedlosses make numdoors bodystyle drivewheels enginelocation numcylinders fuelsystem price enginetype citympg;
+	
 run;
 
-proc reg data=modlin.data;
-	model citympg = wheelbase length width height curbweight enginesize bore stroke
-			compressionratio horsepower peakrpm price /vif;
+data modlin.data(drop=highwaykml);
+	set modlin.data2;
+	highwaykml = highwaympg *0.425170068;
+	highwaylkm100 = round(100/highwaykml,0.01);
+	wheelbase=wheelbase*2.54;
+	length=length*2.54;
+	width=width*2.54;
+	height=height*2.54;
+	bore=bore*2.54;
+	stroke=stroke*2.54;
+	enginesize=round(enginesize*0.0163871,0.01);
+	curbweight=round(curbweight*0.453592,0.01);
+	if fueltype='diesel' then fueldummy=1;
+	else if fueltype='gas' then fueldummy=-1;
+	if aspiration='std' then aspirationdummy=-1;
+	else if aspiration ='turbo' then aspirationdummy=1;
+	aspixfuel = aspirationdummy*fueldummy;
+	if cmiss(of _all_) =0;
 run;
+
+proc export data=modlin.data
+	outfile = "&path/automobileclean.csv"
+	dbms=csv replace;
+run;
+
+/*premiere régression pour vérifier les vif: on supprime curbweight enginesize */
+ods tagsets.tablesonlylatex file="&path/premiereregression.tex" (notop nobot);
+proc reg data=modlin.data;
+	model highwaylkm100 = wheelbase length width height curbweight enginesize bore stroke
+			 horsepower peakrpm  fueldummy aspirationdummy   /vif;
+run;
+ods tagsets.tablesonlylatex close;
+/*verification via proc corr */
+
+proc corr data=modlin.data outp=resultats nosimple;
+var wheelbase length width height curbweight enginesize bore stroke
+			 horsepower peakrpm;
+run;
+
+*print;
+ods tagsets.tablesonlylatex file="&path/corr.tex" (notop nobot);
+proc print data=resultats;
+ format _numeric_ 5.2;
+ run;
+ods tagsets.tablesonlylatex close;
+
+ods tagsets.tablesonlylatex file="&path/regsuppr.tex" (notop nobot);
+proc reg data=modlin.data;
+	model highwaylkm100 = wheelbase length width height bore stroke
+			 horsepower peakrpm fueldummy aspirationdummy /vif;
+run;
+ods tagsets.tablesonlylatex close;
+
+/*selection via critère de mallows*/
+ods tagsets.tablesonlylatex file="&path/regmallows.tex" (notop nobot);
+proc reg data=modlin.data;
+	model highwaylkm100 = wheelbase length width height bore stroke horsepower
+			  peakrpm fueldummy aspirationdummy /vif selection=cp best=5;
+run;
+ods tagsets.tablesonlylatex close;
+/*selection via adj rsq */
+ods tagsets.tablesonlylatex file="&path/regadjsqr.tex" (notop nobot);
+proc reg data=modlin.data;
+	model highwaylkm100 = wheelbase length width height bore stroke horsepower
+			  peakrpm fueldummy aspirationdummy /vif selection=adjrsq best=5;
+run;
+ods tagsets.tablesonlylatex close;
+
+/*selection via forward selection */
+ods tagsets.tablesonlylatex file="&path/regforwarsel.tex" (notop nobot);
+proc reg data=modlin.data;
+	model highwaylkm100 = wheelbase length width height bore stroke horsepower
+			  peakrpm fueldummy aspirationdummy /vif selection=forward sle=0.10;
+run;
+ods tagsets.tablesonlylatex close;
+
+/*stepwise*/
+ods tagsets.tablesonlylatex file="&path/regstepwisesel.tex" (notop nobot);
+proc reg data=modlin.data;
+	model highwaylkm100 = wheelbase length width height bore stroke horsepower
+			  peakrpm fueldummy aspirationdummy /vif selection=stepwise sle=0.1 sls=0.15;
+run;
+ods tagsets.tablesonlylatex close;
+
+/*selection via backward selection */
+
+ods tagsets.tablesonlylatex file="&path/regbackwardsel.tex" (notop nobot);
+proc reg data=modlin.data;
+	model highwaylkm100 = wheelbase length width height bore stroke horsepower
+			  peakrpm fueldummy aspirationdummy /vif selection=backward sls=0.15;
+run;
+ods tagsets.tablesonlylatex close;
+
+
+ods tagsets.tablesonlylatex file="&path/lasso.tex" (notop nobot);
+proc glmselect data=modlin.data plots=all;
+	model highwaylkm100 = wheelbase length width height bore stroke horsepower
+			  peakrpm fueldummy aspirationdummy / selection=lasso (stop=none choose=bic);
+run;
+ods tagsets.tablesonlylatex close;
+
+ods tagsets.tablesonlylatex file="&path/regfinale.tex" (notop nobot);
+proc reg data=modlin.data;
+	model highwaylkm100 = wheelbase length width horsepower
+			   fueldummy aspirationdummy;
+run;
+ods tagsets.tablesonlylatex close;

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.11.22)  28 DEC 2016 22:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.11.22)  30 DEC 2016 18:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,8 +8,8 @@ LaTeX2e <2016/03/31> patch level 3
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/share/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/share/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+(/usr/share/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -337,9 +337,46 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
+(/usr/share/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2016/04/23 3.9r The Babel package
+
+(/usr/share/texmf-dist/tex/generic/babel-french/frenchb.ldf
+Language: frenchb 2016/05/14 v3.2c French support from the babel system
+
+(/usr/share/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2016/04/23 3.9r Babel common definitions
+\babel@savecnt=\count87
+\U@D=\dimen103
+)
+\l@acadian = a dialect from \language\l@french 
+\l@canadien = a dialect from \language\l@french 
+\FB@nonchar=\count88
+\FBcolonskip=\skip43
+\FBthinskip=\skip44
+Package babel Info: Making : an active character on input line 365.
+Package babel Info: Making ; an active character on input line 366.
+Package babel Info: Making ! an active character on input line 367.
+Package babel Info: Making ? an active character on input line 368.
+\FBguillskip=\skip45
+\FBguill@level=\count89
+\FB@everypar=\toks16
+\FB@Mht=\dimen104
+\std@mcc=\count90
+\dec@mcc=\count91
+\listindentFB=\skip46
+\labelwidthFB=\skip47
+\leftmarginFB=\skip48
+\parindentFFN=\dimen105
+\FBfnindent=\skip49
+))
+(/usr/share/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
 (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2016/06/28 v2.15d AMS math features
-\@mathmargin=\skip43
+\@mathmargin=\skip50
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -347,51 +384,51 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks16
-\ex@=\dimen103
+\@emptytoks=\toks18
+\ex@=\dimen106
 ))
 (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen104
+\pmbraise@=\dimen107
 )
 (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count87
+\inf@bad=\count92
 LaTeX Info: Redefining \frac on input line 199.
-\uproot@=\count88
-\leftroot@=\count89
+\uproot@=\count93
+\leftroot@=\count94
 LaTeX Info: Redefining \overline on input line 297.
-\classnum@=\count90
-\DOTSCASE@=\count91
+\classnum@=\count95
+\DOTSCASE@=\count96
 LaTeX Info: Redefining \ldots on input line 394.
 LaTeX Info: Redefining \dots on input line 397.
 LaTeX Info: Redefining \cdots on input line 518.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
-\big@size=\dimen105
+\big@size=\dimen108
 LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
-\macc@depth=\count92
-\c@MaxMatrixCols=\count93
+\macc@depth=\count97
+\c@MaxMatrixCols=\count98
 \dotsspace@=\muskip10
-\c@parentequation=\count94
-\dspbrk@lvl=\count95
-\tag@help=\toks17
-\row@=\count96
-\column@=\count97
-\maxfields@=\count98
-\andhelp@=\toks18
-\eqnshift@=\dimen106
-\alignsep@=\dimen107
-\tagshift@=\dimen108
-\tagwidth@=\dimen109
-\totwidth@=\dimen110
-\lineht@=\dimen111
-\@envbody=\toks19
-\multlinegap=\skip44
-\multlinetaggap=\skip45
-\mathdisplay@stack=\toks20
+\c@parentequation=\count99
+\dspbrk@lvl=\count100
+\tag@help=\toks19
+\row@=\count101
+\column@=\count102
+\maxfields@=\count103
+\andhelp@=\toks20
+\eqnshift@=\dimen109
+\alignsep@=\dimen110
+\tagshift@=\dimen111
+\tagwidth@=\dimen112
+\totwidth@=\dimen113
+\lineht@=\dimen114
+\@envbody=\toks21
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2739.
 LaTeX Info: Redefining \] on input line 2740.
 )
@@ -408,10 +445,6 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks21
-)
 (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
 
@@ -432,92 +465,96 @@ Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 (/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count99
+\Gread@gobject=\count104
 ))
-\Gin@req@height=\dimen112
-\Gin@req@width=\dimen113
+\Gin@req@height=\dimen115
+\Gin@req@width=\dimen116
 )
 (/usr/share/texmf-dist/tex/latex/placeins/placeins.sty
 Package: placeins 2005/04/18  v 2.2
 )
-(/usr/share/texmf-dist/tex/latex/adjustbox/adjustbox.sty
-Package: adjustbox 2012/05/21 v1.0 Adjusting TeX boxes (trim, clip, ...)
+(/usr/share/texmf-dist/tex/latex/tabulary/tabulary.sty
+Package: tabulary 2014/06/11 v0.10 tabulary package (DPC)
 
-(/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
-
-(/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks22
-\XKV@tempa@toks=\toks23
+(/usr/share/texmf-dist/tex/latex/tools/array.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen117
+\extrarowheight=\dimen118
+\NC@list=\toks23
+\extratabsurround=\skip53
+\backup@length=\skip54
 )
-\XKV@depth=\count100
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-(/usr/share/texmf-dist/tex/latex/adjustbox/adjcalc.sty
-Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
--ends (calc, etex, pgfmath)
+\TY@count=\count105
+\TY@linewidth=\dimen119
+\tymin=\dimen120
+\tymax=\dimen121
+\TY@tablewidth=\dimen122
 )
-(/usr/share/texmf-dist/tex/latex/adjustbox/trimclip.sty
-Package: trimclip 2012/05/16 v1.0 Trim and clip general TeX material
+(/usr/share/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2016/05/22 v2.16c rotated objects in LaTeX
 
-(/usr/share/texmf-dist/tex/latex/collectbox/collectbox.sty
-Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box28
+(/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\tc@llx=\dimen114
-\tc@lly=\dimen115
-\tc@urx=\dimen116
-\tc@ury=\dimen117
-Package trimclip Info: Using driver 'tc-pdftex.def'.
-
-(/usr/share/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
-File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
-))
-\adjbox@Width=\dimen118
-\adjbox@Height=\dimen119
-\adjbox@Depth=\dimen120
-\adjbox@Totalheight=\dimen121
-
-(/usr/share/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
-Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count101
+\c@r@tfl@t=\count106
+\rotFPtop=\skip55
+\rotFPbot=\skip56
+\rot@float@box=\box28
+\rot@mess@toks=\toks24
 )
-(/usr/share/texmf-dist/tex/latex/varwidth/varwidth.sty
-Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box29
-\sift@deathcycles=\count102
-\@vwid@loff=\dimen122
-\@vwid@roff=\dimen123
-)) (./projetmodlin.aux)
+(/usr/share/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/share/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen123
+\captionmargin@=\dimen124
+\captionwidth=\dimen125
+\caption@tempdima=\dimen126
+\caption@indent=\dimen127
+\caption@parindent=\dimen128
+\caption@hangindent=\dimen129
+)
+\c@ContinuedFloat=\count107
+Package caption Info: rotating package is loaded.
+) (./projetmodlin.aux)
 \openout1 = `projetmodlin.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Info: Redefining \degres on input line 15.
+LaTeX Info: Redefining \dots on input line 15.
+LaTeX Info: Redefining \up on input line 15.
+
+
+Package frenchb.ldf Warning: OT1 encoding should not be used for French.
+(frenchb.ldf)                Add \usepackage[T1]{fontenc} to the preamble
+(frenchb.ldf)                of your document, on input line 15.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count103
-\scratchdimen=\dimen124
-\scratchbox=\box30
-\nofMPsegments=\count104
-\nofMParguments=\count105
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count106
-\MPscratchDim=\dimen125
-\MPnumerator=\count107
-\makeMPintoPDFobject=\count108
-\everyMPtoPDFconversion=\toks25
+\scratchcounter=\count108
+\scratchdimen=\dimen130
+\scratchbox=\box29
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen131
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks26
 ) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -567,34 +604,451 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 12.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+msa on input line 16.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 12.
+LaTeX Font Info:    Try loading font information for U+msb on input line 16.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./projetmodlin.aux) )
- 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (19.11758pt too wide) in paragraph at lines 30--48
+ [][] 
+ []
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
+(Font)              using `OT1/cmr/bx/n' instead on input line 48.
+
+<meanauto.png, id=12, 673.51625pt x 675.52374pt>
+File: meanauto.png Graphic file (type png)
+ <use meanauto.png>
+Package pdftex.def Info: meanauto.png used on input line 85.
+(pdftex.def)             Requested size: 288.0011pt x 288.86156pt.
+ [2]
+[3 <./meanauto.png>]
+Overfull \hbox (4.1667pt too wide) in paragraph at lines 119--119
+ []\OT1/cmr/m/n/10 DF|
+ []
+
+
+Overfull \hbox (10.49858pt too wide) in paragraph at lines 119--119
+ []$\OML/cmm/m/it/10 Pr  >  \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 t\OMS/cmsy/m/n/1
+0 j$|
+ []
+
+
+Overfull \hbox (3.534pt too wide) in paragraph at lines 119--119
+ []$\OMS/cmsy/m/n/10 ^^@$\OT1/cmr/m/n/10 0.95|
+ []
+
+
+Overfull \hbox (3.534pt too wide) in paragraph at lines 119--119
+ []$\OMS/cmsy/m/n/10 ^^@$\OT1/cmr/m/n/10 0.59|
+ []
+
+
+Overfull \hbox (1.24268pt too wide) in paragraph at lines 119--119
+ []\OT1/cmr/m/n/10 0.00067915|
+ []
+
+
+Overfull \hbox (1.51149pt too wide) in paragraph at lines 119--119
+ []$\OML/cmm/m/it/10 <$\OT1/cmr/m/n/10 .0001|
+ []
+
+
+Overfull \hbox (1.51149pt too wide) in paragraph at lines 119--119
+ []$\OML/cmm/m/it/10 <$\OT1/cmr/m/n/10 .0001|
+ []
+
+
+Overfull \hbox (3.534pt too wide) in paragraph at lines 119--119
+ []$\OMS/cmsy/m/n/10 ^^@$\OT1/cmr/m/n/10 2.16|
+ []
+
+
+Overfull \hbox (3.534pt too wide) in paragraph at lines 119--119
+ []$\OMS/cmsy/m/n/10 ^^@$\OT1/cmr/m/n/10 3.76|
+ []
+
+
+Overfull \hbox (3.534pt too wide) in paragraph at lines 119--119
+ []$\OMS/cmsy/m/n/10 ^^@$\OT1/cmr/m/n/10 2.44|
+ []
+
+
+Overfull \hbox (1.24268pt too wide) in paragraph at lines 119--119
+ []\OT1/cmr/m/n/10 0.00013387|
+ []
+
+
+Overfull \hbox (8.53401pt too wide) in paragraph at lines 119--119
+ []$\OMS/cmsy/m/n/10 ^^@$\OT1/cmr/m/n/10 10.88|
+ []
+
+
+Overfull \hbox (1.51149pt too wide) in paragraph at lines 119--119
+ []$\OML/cmm/m/it/10 <$\OT1/cmr/m/n/10 .0001|
+ []
+
+
+Overfull \hbox (1.51149pt too wide) in paragraph at lines 119--119
+ []$\OML/cmm/m/it/10 <$\OT1/cmr/m/n/10 .0001|
+ []
+
+[4]
+Overfull \hbox (5.18813pt too wide) in paragraph at lines 146--146
+\OT1/cmr/m/n/10 Square|  
+ []
+
+
+Overfull \hbox (3.21593pt too wide) in paragraph at lines 146--146
+[]\OT1/cmr/m/n/10 0.8152|  
+ []
+
+
+Overfull \hbox (3.21593pt too wide) in paragraph at lines 146--146
+[]\OT1/cmr/m/n/10 0.8168|  
+ []
+
+
+Underfull \hbox (badness 1527) in paragraph at lines 146--146
+[]\OT1/cmr/m/n/10 wheel-base length width hor-se-po-wer pea-krpm
+ []
+
+
+Overfull \hbox (3.21593pt too wide) in paragraph at lines 146--146
+[]\OT1/cmr/m/n/10 0.8184|  
+ []
+
+
+Overfull \hbox (3.21593pt too wide) in paragraph at lines 146--146
+[]\OT1/cmr/m/n/10 0.8122|  
+ []
+
+
+Overfull \hbox (3.21593pt too wide) in paragraph at lines 146--146
+[]\OT1/cmr/m/n/10 0.8159|  
+ []
+
+
+Overfull \hbox (9.10014pt too wide) in paragraph at lines 164--164
+\OT1/cmr/m/n/10 Square|  
+ []
+
+
+Overfull \hbox (7.12794pt too wide) in paragraph at lines 164--164
+[]\OT1/cmr/m/n/10 0.8184|  
+ []
+
+
+Overfull \hbox (7.12794pt too wide) in paragraph at lines 164--164
+[]\OT1/cmr/m/n/10 0.8194|  
+ []
+
+
+Overfull \hbox (7.12794pt too wide) in paragraph at lines 164--164
+[]\OT1/cmr/m/n/10 0.8199|  
+ []
+
+
+Overfull \hbox (7.12794pt too wide) in paragraph at lines 164--164
+[]\OT1/cmr/m/n/10 0.8168|  
+ []
+
+
+Overfull \hbox (7.12794pt too wide) in paragraph at lines 164--164
+[]\OT1/cmr/m/n/10 0.8187|  
+ []
+
+[5] [6]
+Overfull \hbox (3.31615pt too wide) in paragraph at lines 187--187
+[]\OT1/cmr/m/n/8 Step|  
+ []
+
+
+Overfull \hbox (4.97318pt too wide) in paragraph at lines 187--187
+[]$\OML/cmm/m/it/8 Pr  >  F$|  
+ []
+
+
+Overfull \hbox (2.96283pt too wide) in paragraph at lines 204--204
+[]\OT1/cmr/m/n/8 Step|  
+ []
+
+
+Overfull \hbox (4.24203pt too wide) in paragraph at lines 204--204
+[]$\OML/cmm/m/it/8 Pr  >  F$|  
+ []
+
+
+Overfull \hbox (4.2326pt too wide) in paragraph at lines 204--204
+[]\OT1/cmr/m/n/8 9.5281|  
+ []
+
+
+Overfull \hbox (4.2326pt too wide) in paragraph at lines 204--204
+[]\OT1/cmr/m/n/8 8.5198|  
+ []
+
+
+Overfull \hbox (4.2326pt too wide) in paragraph at lines 204--204
+[]\OT1/cmr/m/n/8 8.2218|  
+ []
+
+
+Overfull \hbox (4.2326pt too wide) in paragraph at lines 204--204
+[]\OT1/cmr/m/n/8 7.8733|  
+ []
+
+
+Overfull \hbox (6.52802pt too wide) in paragraph at lines 223--223
+[]\OT1/cmr/m/n/8 Step|  
+ []
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <6.49994> not available
+(Font)              size <6> substituted on input line 250.
+
+
+Overfull \hbox (30.23802pt too wide) in paragraph at lines 295--295
+[]\OT1/cmr/bx/n/14.4 V^^Serification des hy-poth^^Reses sous-jascentes au mod^^
+Rele
+ []
+
+
+Overfull \hbox (8.02155pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 length|
+ []
+
+
+Overfull \hbox (7.05821pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 width|
+ []
+
+
+Overfull \hbox (7.9397pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 height|
+ []
+
+
+Overfull \hbox (2.10675pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 bore|
+ []
+
+
+Overfull \hbox (7.71292pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 stroke|
+ []
+
+
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.80|
+ []
+
+
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.49|
+ []
+
+
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.17|
+ []
+
+
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.84|
+ []
+
+
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.61|
+ []
+
+
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.12|
+ []
+
+
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 1.00|
+ []
+
+
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.56|
+ []
+
+
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.18|
+ []
+
+
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.29|
+ []
+
+
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.18|
+ []
+
+
+Overfull \hbox (7.18652pt too wide) in paragraph at lines 318--318
+ []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.05|
+ []
+
+
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.87|
+ []
+
+
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.65|
+ []
+
+
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.17|
+ []
+
+
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.75|
+ []
+
+
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.59|
+ []
+
+
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.21|
+ []
+
+
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.56|
+ []
+
+
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 1.00|
+ []
+
+
+Overfull \hbox (7.18652pt too wide) in paragraph at lines 318--318
+ []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.07|
+ []
+
+
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.18|
+ []
+
+
+Overfull \hbox (6.75912pt too wide) in paragraph at lines 318--318
+ []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.05|
+ []
+
+
+Overfull \hbox (7.53044pt too wide) in paragraph at lines 318--318
+ []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.07|
+ []
+
+
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 1.00|
+ []
+
+
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.64|
+ []
+
+
+Overfull \hbox (6.75912pt too wide) in paragraph at lines 318--318
+ []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.11|
+ []
+
+
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.58|
+ []
+
+
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 318--318
+ []\OT1/cmr/m/n/8 0.09|
+ []
+
+
+Overfull \hbox (6.60486pt too wide) in paragraph at lines 318--318
+ []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.28|
+ []
+
+
+Overfull \hbox (7.53044pt too wide) in paragraph at lines 318--318
+ []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.22|
+ []
+
+
+Overfull \hbox (6.75912pt too wide) in paragraph at lines 318--318
+ []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.28|
+ []
+
+
+Overfull \hbox (7.53044pt too wide) in paragraph at lines 318--318
+ []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.26|
+ []
+
+
+Overfull \hbox (7.18652pt too wide) in paragraph at lines 318--318
+ []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.07|
+ []
+
+[7] [8] [9] (./projetmodlin.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.49994pt have occurred.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3440 strings out of 493013
- 45219 string characters out of 6139316
- 114340 words of memory out of 5000000
- 6906 multiletter control sequences out of 15000+600000
- 11789 words of font info for 46 fonts, out of 8000000 for 9000
+ 5141 strings out of 493013
+ 71399 string characters out of 6139316
+ 189184 words of memory out of 5000000
+ 8599 multiletter control sequences out of 15000+600000
+ 13660 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,8n,37p,562b,211s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr17.pfb>
-Output written on projetmodlin.pdf (2 pages, 40965 bytes).
+ 40i,11n,39p,1757b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
+share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
+r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on projetmodlin.pdf (9 pages, 179218 bytes).
 PDF statistics:
- 23 PDF objects out of 1000 (max. 8388607)
- 15 compressed objects within 1 object stream
+ 83 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
