@@ -28,7 +28,7 @@ data modlin.data2;
 		  citympg
 		  highwaympg
 		  price;
-	drop symboling normalizedlosses make numdoors bodystyle drivewheels enginelocation numcylinders fuelsystem price enginetype citympg;
+	drop symboling normalizedlosses numdoors bodystyle drivewheels enginelocation numcylinders fuelsystem price enginetype citympg;
 	
 run;
 
@@ -133,9 +133,45 @@ proc glmselect data=modlin.data plots=all;
 run;
 ods tagsets.tablesonlylatex close;
 
+/*modele final*/
 ods tagsets.tablesonlylatex file="&path/regfinale.tex" (notop nobot);
-proc reg data=modlin.data;
+proc reg data=modlin.data plots=all;
 	model highwaylkm100 = wheelbase length width horsepower
-			   fueldummy aspirationdummy;
+			   fueldummy aspirationdummy / white dwprob r vif influence;
+	output out=modlin.resulta2 residual=residu h=leverage student=resstu
+rstudent=resstudel dffits=dfits cookd=Dcook P=predicted;
+run;
+
+ods tagsets.tablesonlylatex close;
+/*modèle incluant les variables des constructeurs */
+ods tagsets.tablesonlylatex file="&path/regfinalecorrige.tex" (notop nobot);
+proc reg data=modlin.datab;
+	model thighwaylkm100 = wheelbase length width horsepower
+			   fueldummy aspirationdummy tmakealfa_rom tmakeaudi tmakebmw tmakechevrole
+			   tmakedodge tmakehonda tmakeisuzu tmakejaguar tmakemazda tmakemercedes
+			   tmakemercury tmakemitsubis tmakenissan tmakepeugot tmakeplymouth
+			   tmakeporsche tmakesaab tmakesubaru tmaketoyota tmakevolkswag
+			    / white dwprob;
+			 
 run;
 ods tagsets.tablesonlylatex close;
+
+proc transreg data=modlin.data;
+	model Boxcox(highwaylkm100)=identity(wheelbase length width horsepower wheelbase length width horsepower
+			   fueldummy aspirationdummy)
+	class(make);
+	output out=modlin.datab;
+	run;
+	quit;
+proc contents data=modlin.datab;
+run;
+
+/* a faire sur pc salle info
+proc model data=modlin.data;
+	parms wheelbase length width horsepower
+			   fueldummy aspirationdummy;
+	highwaylkm100 = wheelbase length width horsepower
+			   fueldummy aspirationdummy;
+	fit highwaylkm100 /white;
+run;
+*/

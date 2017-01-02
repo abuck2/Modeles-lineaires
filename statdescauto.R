@@ -5,6 +5,7 @@ library(xtable)
 library(pastecs)
 library(doBy)
 library(ggplot2)
+library(het.test)
 automobilenum <- automobile[,c("wheelbase","length","width","height","curbweight","enginesize","bore","stroke",
                                "compressionratio","horsepower","peakrpm","highwaylkm100")]
 statdescauto<-t(stat.desc(automobilenum,T,T))
@@ -28,4 +29,5 @@ par(mfrow=c(3,3),oma=c(0,0,2,0))
 sapply(10:16,FUN=myboxplots)
 title(main="Boxplots de toutes les variables",outer=T)
 dev.off()
+
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.11.22)  30 DEC 2016 18:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.11.22)  2 JAN 2017 17:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -818,207 +818,225 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <6.49994> not available
 (Font)              size <6> substituted on input line 250.
 
 
-Overfull \hbox (30.23802pt too wide) in paragraph at lines 295--295
-[]\OT1/cmr/bx/n/14.4 V^^Serification des hy-poth^^Reses sous-jascentes au mod^^
-Rele
+Overfull \hbox (10.84164pt too wide) in paragraph at lines 297--299
+\OT1/cmr/m/n/10.95 De plus, des ob-ser-va-tion aber-rantes et in-fluentes peuve
+nt in-fluen-cer la construc-
  []
 
+[7] [8] [9]
+Overfull \hbox (9.44972pt too wide) in paragraph at lines 330--331
+\OT1/cmr/m/n/10.95 certes faible, mais nous avons voulu la cor-ri-ger. Comme su
+gg^^Ser^^Se pr^^Sec^^Sedemment,
+ []
 
-Overfull \hbox (8.02155pt too wide) in paragraph at lines 318--318
+<fitdiagnostics.png, id=44, 481.8pt x 481.8pt>
+File: fitdiagnostics.png Graphic file (type png)
+ <use fitdiagnostics.png>
+Package pdftex.def Info: fitdiagnostics.png used on input line 357.
+(pdftex.def)             Requested size: 360.0pt x 360.0111pt.
+
+<resbyregressors.png, id=45, 481.8pt x 361.35pt>
+File: resbyregressors.png Graphic file (type png)
+ <use resbyregressors.png>
+Package pdftex.def Info: resbyregressors.png used on input line 363.
+(pdftex.def)             Requested size: 360.0pt x 270.00833pt.
+
+Overfull \hbox (8.02155pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 length|
  []
 
 
-Overfull \hbox (7.05821pt too wide) in paragraph at lines 318--318
+Overfull \hbox (7.05821pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 width|
  []
 
 
-Overfull \hbox (7.9397pt too wide) in paragraph at lines 318--318
+Overfull \hbox (7.9397pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 height|
  []
 
 
-Overfull \hbox (2.10675pt too wide) in paragraph at lines 318--318
+Overfull \hbox (2.10675pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 bore|
  []
 
 
-Overfull \hbox (7.71292pt too wide) in paragraph at lines 318--318
+Overfull \hbox (7.71292pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 stroke|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.80|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.49|
  []
 
 
-Overfull \hbox (0.57532pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.17|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.84|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.61|
  []
 
 
-Overfull \hbox (0.57532pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.12|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 1.00|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.56|
  []
 
 
-Overfull \hbox (0.57532pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.18|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.29|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.18|
  []
 
 
-Overfull \hbox (7.18652pt too wide) in paragraph at lines 318--318
+Overfull \hbox (7.18652pt too wide) in paragraph at lines 390--390
  []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.05|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.87|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.65|
  []
 
 
-Overfull \hbox (0.57532pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.17|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.75|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.59|
  []
 
 
-Overfull \hbox (0.57532pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.21|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.56|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 1.00|
  []
 
 
-Overfull \hbox (7.18652pt too wide) in paragraph at lines 318--318
+Overfull \hbox (7.18652pt too wide) in paragraph at lines 390--390
  []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.07|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.18|
  []
 
 
-Overfull \hbox (6.75912pt too wide) in paragraph at lines 318--318
+Overfull \hbox (6.75912pt too wide) in paragraph at lines 390--390
  []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.05|
  []
 
 
-Overfull \hbox (7.53044pt too wide) in paragraph at lines 318--318
+Overfull \hbox (7.53044pt too wide) in paragraph at lines 390--390
  []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.07|
  []
 
 
-Overfull \hbox (0.57532pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 1.00|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.64|
  []
 
 
-Overfull \hbox (6.75912pt too wide) in paragraph at lines 318--318
+Overfull \hbox (6.75912pt too wide) in paragraph at lines 390--390
  []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.11|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.58|
  []
 
 
-Overfull \hbox (0.57532pt too wide) in paragraph at lines 318--318
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 390--390
  []\OT1/cmr/m/n/8 0.09|
  []
 
 
-Overfull \hbox (6.60486pt too wide) in paragraph at lines 318--318
+Overfull \hbox (6.60486pt too wide) in paragraph at lines 390--390
  []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.28|
  []
 
 
-Overfull \hbox (7.53044pt too wide) in paragraph at lines 318--318
+Overfull \hbox (7.53044pt too wide) in paragraph at lines 390--390
  []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.22|
  []
 
 
-Overfull \hbox (6.75912pt too wide) in paragraph at lines 318--318
+Overfull \hbox (6.75912pt too wide) in paragraph at lines 390--390
  []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.28|
  []
 
 
-Overfull \hbox (7.53044pt too wide) in paragraph at lines 318--318
+Overfull \hbox (7.53044pt too wide) in paragraph at lines 390--390
  []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.26|
  []
 
 
-Overfull \hbox (7.18652pt too wide) in paragraph at lines 318--318
+Overfull \hbox (7.18652pt too wide) in paragraph at lines 390--390
  []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.07|
  []
 
-[7] [8] [9] (./projetmodlin.aux)
+[10] [11 <./fitdiagnostics.png (PNG copy)>] [12 <./resbyregressors.png (PNG cop
+y)>] [13] (./projetmodlin.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.49994pt have occurred.
@@ -1028,13 +1046,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 5141 strings out of 493013
- 71399 string characters out of 6139316
- 189184 words of memory out of 5000000
- 8599 multiletter control sequences out of 15000+600000
+ 5156 strings out of 493013
+ 71690 string characters out of 6139316
+ 176223 words of memory out of 5000000
+ 8612 multiletter control sequences out of 15000+600000
  13660 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,11n,39p,1757b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,12n,39p,1757b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/publi
@@ -1045,10 +1063,10 @@ t/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
 r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on projetmodlin.pdf (9 pages, 179218 bytes).
+Output written on projetmodlin.pdf (13 pages, 254598 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
+ 98 PDF objects out of 1000 (max. 8388607)
+ 67 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

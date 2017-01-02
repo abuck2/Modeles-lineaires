@@ -292,9 +292,78 @@ Les tables \ref{table:mallows} et \ref{table:adjsqr} permettent de comparer les 
 	\label{table:aov}
 \end{table}
 
-\section{Vérification des hypothèses sous-jascentes au modèle linéaire}
+\section{Diagnostic du modèle linéaires et mesures correctrices}
+\subsection{Diagnostic}
 Nous allons maintenant nous intéresser à la vérification des hypothèses sous-jascentes à la regression.
-Il y a trois principales hypothèses: l'homoskedasticité, la normalité des résidus et l'absence d'autocorrélation.
+Il y a trois principales hypothèses: l'homoscédasticité, la normalité des résidus et l'indépendance des observations. De plus, des observation aberrantes et influentes peuvent influencer la construction du modèle de régression. Les figures \ref{fig:diagnostics} et\ref{fig:regressors} présentent les différents graphes nous permettant de répondre à ces questions.
+
+\paragraph{Homoscédasticité} Nous pouvons répondre à cette question en observant le graphe des résidus par rapport aux valeurs prédites. Nous pouvons voir que les erreurs se répartissent aléatoirement autour de 0, indiquant une variance homogène. Il n'y a pas de structure claire se dégageant du graphe.
+Néanmoins, sur la figure \ref{fig:regressors}, nous constatons que la variance des deux variables catégorielles est différente pour chaque niveau. Il y a un problème d'héteroskédasticité pour ces deux variables catégorielles.
+%test homoscé%
+\paragraph{Normalité des résidus} Le Q-Q plot nous permet de comparer les quantiles de notre distribution aux quantiles de la distribution normale. Si tous les points sont sur la diagonale, alors notre distribution est normale. Nous pouvons constater que les résidus sont en moyenne situés sur la droite. Néanmoins, les valeurs extrêmes de la distribution s'écartent de la distribution normale. Sur l'histogramme des résidus, nous pouvons voir que leur densité se rapproche d'une normale. Nous pouvons donc faire l'hypothèse, prudente, que les résidus suivent une distribution normale.
+%testnormalité%
+\paragraph{Indépendance des observation} D'un point de vue théorique, chaque modèle de voiture de ce dataset est différent. Néanmoins, il faut être prudent avec cette affirmation. En effet, il est raisonnable de penser qu'un constructeur produisant plusieurs modèle de voiture réutilise certains composants dans différents modèles, offrant des performances similaires. Dans ce cas, il pourrait exister des observations qui ne sont pas indépendantes les unes des autres. Via SAS, nous avons réalisé un test de Durbin-Watson pour l'autocorrélation. Celui-ci indique une autocorrélation positive signification de premier ordre de 0.288.
+\begin{table}
+	\scriptsize
+	\centering
+	\begin{tabulary}{1\textwidth}{LL}
+		\hline
+		 Durbin-Watson D &    1.406\\
+		$Pr < DW$ &    $<$.0001\\
+		$Pr > DW $&    1.0000\\
+		Number of Observations &    199\\
+		1st Order Autocorrelation &    0.288\\\hline
+	\end{tabulary}
+	\caption{Test de Durbin-Watson pour l'autocorrélation}
+	\label{table:}
+\end{table}
+% ajouter tests d'autocorrélation d'obs%
+\paragraph{Observations aberrantes}
+Sur le graphe ... nous pouvons observer les leviers par rapport au numéro d'observation. C'est une mesure des observations aberrantes par rapport aux régresseurs.
+Sur le graphe ... nous pouvons observer les résidus effacés studentisés par rapport au numéro d'observation. C'est une mesure des observations aberrantes par rapport  à la réponse.
+
+\paragraph{Observations influentes} Le graphe des DFFITS (figure ...) permet d'observer les observations influentes par rapport aux valeurs prédites
+Le graphe des distances de Cook (figure ...) permet de détecter la présence d'observations influentes sur les valeurs prédites, ainsi que sur les coefficients de la régression.
+
+\subsection{Mesures correctrices}
+\paragraph{Correction de l'heteroskedasticité et de l'autocorrélation}
+Nous avons vu que la variance des variables catégorielles n'était pas homogène. En outre, il y avait une autocorrélation de premier ordre significative. Elle était certes faible, mais nous avons voulu la corriger. Comme suggéré précédemment, la non-indépendance provient peut-être du fait que les différents modèles de voiture provenant d'un même constructeur ont des caractéristiques similaires. Comme suggéré par Neter(2004), une solution possible à cette autocorrélation est d'inclure des variables indépendantes susceptibles d'être la source de cette non indépendance. Ainsi, nous avons relancé un modèle en ajoutant les modèles de voitures comme variables indépendantes. De plus, afin de corriger l'hétéroscédasticité, nous avons réalisé une transformation de box-cox sur la variable dépendantes.
+
+\paragraph{Correction des observations influentes et aberrantes}
+...
+
+
+\paragraph{Modèle final après corrections}
+Sur le graphe ... nous pouvons constater que les variances des prédicteurs catégoriels est maintenant beaucoup plus homogène.
+De plus, le test de Durbin-Watson pour l'autocorrélation nous montre que celle-ci à été fortement réduite, passant a 0.054. Néanmoins, elle est toujours significative, indiquant qu'il existe toujours une petite source d'autocorrélation, non-identifiée.
+
+
+\begin{table}
+	\scriptsize
+	\centering
+	\begin{tabulary}{1\textwidth}{LL}\hline
+		Durbin-Watson D &    1.888\\
+		$Pr < DW$ &    0.0122\\
+		$Pr > DW$ &    0.9878\\
+		Number of Observations &    199\\
+		1st Order Autocorrelation &    0.054\\\hline
+	\end{tabulary}
+	\caption{Test de Durbin-Watson après correction via ajout des constructeurs de voitures comme variables de contrôle.}
+	\label{table:dwcorrected}
+\end{table}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1\linewidth]{fitdiagnostics}
+	\caption{Résumé des différents diagnostiques du modèle de régression}
+	\label{fig:diagnostics}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=1\linewidth]{resbyregressors}
+	\caption{Graphes des résidus par régresseurs}
+	\label{fig:regressors}
+\end{figure}
 
 \section{Annexes}
 \appendix
