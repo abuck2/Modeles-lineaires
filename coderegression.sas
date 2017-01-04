@@ -137,7 +137,7 @@ ods tagsets.tablesonlylatex close;
 ods tagsets.tablesonlylatex file="&path/regfinale.tex" (notop nobot);
 proc reg data=modlin.data plots=all;
 	model highwaylkm100 = wheelbase length width horsepower
-			   fueldummy aspirationdummy / white dwprob r vif influence;
+			   fueldummy aspirationdummy aspixfuel / white dwprob r vif influence;
 	output out=modlin.resulta2 residual=residu h=leverage student=resstu
 rstudent=resstudel dffits=dfits cookd=Dcook P=predicted;
 run;
@@ -155,7 +155,7 @@ proc reg data=modlin.datab;
 			 
 run;
 ods tagsets.tablesonlylatex close;
-
+/*box cox*/
 proc transreg data=modlin.data;
 	model Boxcox(highwaylkm100)=identity(wheelbase length width horsepower wheelbase length width horsepower
 			   fueldummy aspirationdummy)
@@ -164,6 +164,14 @@ proc transreg data=modlin.data;
 	run;
 	quit;
 proc contents data=modlin.datab;
+run;
+data modlin.datacb;
+	set modlin.datab;
+	drop tintercept--tmakevolkswag _type_ _name_ intercept;
+run;
+proc export data=modlin.datacb
+	outfile = "&path/automobilecleanboxcox.csv"
+	dbms=csv replace;
 run;
 
 /* a faire sur pc salle info
