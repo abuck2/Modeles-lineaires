@@ -367,11 +367,15 @@ De plus, le test de Durbin-Watson pour l'autocorrélation nous montre que celle-
 
 \section{Prédiction}
 
-On peut également tenter de calculer l'intervalle de prédiction sur une nouvelle valeur. La première étape consiste à choisir cette nouvelle valeur sur laquelle estimer l'intervalle. Pour ce faire, on peut demander à l'ordinateur de générer une nouvelle variable avec une distribution de moyenne et variance égale à celle de chacune des variables. 
+On peut également tenter de calculer l'intervalle de prédiction sur une nouvelle valeur. La première étape consiste à choisir cette nouvelle valeur sur laquelle estimer l'intervalle. Pour ce faire, on peut demander à l'ordinateur de générer une nouvelle variable avec une distribution de moyenne et variance égale à celle de chacune des variables. On peut alors ensuite appliquer notre modèle à cette valeur, et calculer l'intervalle de prédiction et l'intervalle de confiance autour de cette valeur. On fixera la valeur de alpha à 0.95 pour le calcul des intervalles.
 
 Si on calcule l'intervalle de prédiction sur une nouvelle donnée construite par cette méthode, on obtient une valeur prédite de 6.577 et un intervalle compris entre 4.86 et 8.29. Si les valeurs semblent à priori raisonnables (elles ne sont en effet pas très éloignées de la moyenne de la variable dépendante), il peut néanmoins être frustrant de constater la largeur de l'intervalle de prédiction. La borne supérieure est en effet près du double de la borne inférieure (1.7 fois celle-ci exactement). La largeur de cet intervalle est peut-être normal, mais il est intéressant de se poser la question de ce qui a pu aller de travers et provoquer cet intervalle qui semble excessivement large.
 
-Si on considère que cet intervalle large n'est pas naturel et provient d'une erreur dans le modèle, on peut rechercher d'où provient ce résultat. On pourrait penser que la transformation, en modifiant les unité pourrait être à l'origine de cet écart démesuré. Néanmoins, la même technique appliquée aux unités d'origine donne un résultat similaire au résultat obtenu précédemment.
+Si on considère que cet intervalle large n'est pas naturel et provient d'une erreur dans le modèle, on peut rechercher d'où provient ce résultat. On pourrait penser que la transformation, en modifiant les unité pourrait être à l'origine de cet écart démesuré. Néanmoins, la même technique appliquée aux unités d'origine donne un résultat similaire au résultat obtenu précédemment. 
+
+Il est donc plus probable que l'intervalle, aussi large qu'il soit est tout simplement l'intervalle de prediction correct pour le modèle sélectionné.
+
+L'intervalle de confiance est lui bien plus étroit, étant compris entre 5.95 et 7.20. On voit ici assez clairement la différence entre les deux. La différence entre les deux bornes est de 3.43 pour l'intervalle de prédiction et de 1.07 pour l'intervalle de confiance.
 
 \section{Annexes}
 \appendix
