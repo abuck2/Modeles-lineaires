@@ -9,9 +9,11 @@
 \usepackage{placeins}
 \usepackage{tabulary}
 \usepackage{rotating}
+\usepackage{subcaption}
 \usepackage[font=small,labelfont=bf]{caption}
 \author{Axel Struys - Alexis Buckens}
-\title{Projet - Modèles linéaires}
+\title{LSTAT2120 - Modèles linéaires - Projet\\ Prédiction de la consommation de carburant en fonction de différents paramètres }
+
 \begin{document}
 \maketitle
 \section{Introduction}
@@ -20,7 +22,29 @@ Ce dataset décrit plusieurs modèles de voitures en fonction de différentes ca
 Le dataset contenait à l'origine 26 variables: 16 continues et 10 nominales. Pour l'analyse, nous avons choisi 13 variables continues et 2 variables nominales. Nous avons exclu 4 variables continues car elles étaient des variables dépendantes. Nous avons exclu 8 variables nominales afin de simplifier le modèle. De plus, la variable highwaympg exprimait la consommation de carburant en miles par gallons. Afin d'exprimer cette consommation en unité européenne, nous l'avons transformée en L/100Km. Aussi, nous avons converti les unités de longueur en centimètres, les unités de poids en kilogrammes et les unités de volume en litres ($dm^{3}$).
 Il y avait 205 observations à l'origine, mais pour 6 d'entre-elles, il y avait des valeurs manquantes. Nous avons supprimé ces observations. Le dataset ainsi nettoyé contient 199 observations.
 
-Dans la table \ref{table:desc} nous présentons les statistiques descriptives pour les 13 variables continues, ainsi que les unités correspondantes. La table \ref{table:freq} présente les fréquences observées des deux variables discrètes : Aspiration et Engine type. Ces deux variables ont deux niveaux. On peut remarquer que les fréquences observées ne correspondent pas aux fréquences attendues: 40 observations par cellule. Pour l'analyse de la variance, nous sommes donc dans une situation où les cellules sont de tailles inégales. Il faudra donc adapter notre manière de calculer les effets principaux et les interactions pour ces deux variables discrètes.
+\paragraph{Description des variables} 
+Dans la table \ref{table:desc} nous présentons les statistiques descriptives pour les 13 variables continues, ainsi que les unités correspondantes. La table \ref{table:freq} présente les fréquences observées des deux variables discrètes : Aspiration et Engine type. Ces deux variables ont deux niveaux. On peut remarquer que les fréquences observées ne correspondent pas aux fréquences attendues: 40 observations par cellule. Pour l'analyse de la variance, nous sommes donc dans une situation où les cellules sont de tailles inégales.
+Brève description des variables:
+\begin{enumerate}
+\item Wheelbase: c'est la distance entre les roues avant et arrière de la voiture
+\item Length/width/height: longueur/largeur/hauteur de la voiture.
+\item Curbweigth: masse à vide du véhicule, en ordre de marche (sans les passagers et autres marchandises).
+\item Enginesize: c'est le volume du moteur, exprimé en litres.
+\item Bore: c'est le diamètre des pistons du moteur.
+\item Stroke: c'est la distance totale parcourue par le piston lors d'un cycle.
+\item Compression ratio: c'est le taux de compression du piston, c'est un ratio entre le volume maximal en début de cycle, et le volume minimal que le piston comprime, juste avant l'explosion.
+\item Horsepower: Cheval-vapeur en français. C'est une unité qui exprime la puissance du moteur.
+\item Peakrpm: nombre maximal de tour/minutes du moteur.
+\item Fueltype: type de carburant (essence ou diesel)
+\item Aspiration: admission d'air classique (atmosphérique) ou turbocomprimée.
+\item Highwaylkm100: consommation de carburant sur l'autoroute, en litres par 100 km.
+
+\end{enumerate}
+
+
+
+
+
 Enfin, la table \ref{table:mean} présente la moyenne de consommation sur autoroute en fonction du type de carburant et du type d'aspiration d'air.
 Ce tableau est représenté graphiquement sur la figure \ref{fig:meanauto}. De façon purement descriptive, on peut constater une consommation de carburation supérieure pour une aspiration de type turbo, ainsi qu'une consommation supérieure pour l'essence par rapport au diesel. Néanmoins,  nous devrons confirmer ces affirmation en testant les effets principaux de ces variables, ce que nous feront plus loin dans ce travail.
 
@@ -128,128 +152,22 @@ Après avoir vérifié la multicolinéarité, plusieurs méthodes sont disponibl
 
 \paragraph{Méthodes de type 1} Il est possible de choisir le meilleur modèle parmi tous les modèles possibles, sur base d'un critère; Nous comparerons ici le critère de Mallows et le critère du coefficient de détermination ajusté. Grâce à SAS, nous pouvons rapidement calculer le meilleur modèles. Un inconvénient majeur de ces méthodes est que plus le nombre de variables dans le modèle augmente, plus cela demande de ressources de calcul étant donné que le logiciel doit calculer toutes les permutations possibles. Dans notre cas, le nombre de variable de bases est raisonnable, ce qui permet l'emploi de ces méthodes.
 %2 tables pour comparer les deux critères -> annexe
-Les tables \ref{table:mallows} et \ref{table:adjsqr} permettent de comparer les 5 meilleurs modèles en fonction de ces deux critères. En fonction du critère de Mallows, dont l'estimateur est C(p), le meilleur modèle ne contient que 6 variables, et explique 81\% de la variance. En utilisant le critère du R$^2$ ajusté, le meilleur modèle contient 8 variables, et explique aussi 81\% de la variance. Néanmoins, il nous semble plus pertinent d'être parcimonieux dans le nombre de variables explicatives à inclure. Dans ce cas, le modèle incluant 6 variables est plus intéressant. On pourrait même considérer le quatrième meilleur modèle selon le critère de Mallows, qui ne contient que 5 variables et pourtant explique toujours 81\% de la variance.
+Les tables \ref{table:mallows} et \ref{table:adjsqr} en annexe permettent de comparer les 5 meilleurs modèles en fonction de ces deux critères. En fonction du critère de Mallows, dont l'estimateur est C(p), le meilleur modèle ne contient que 6 variables, et explique 81\% de la variance. En utilisant le critère du R$^2$ ajusté, le meilleur modèle contient 8 variables, et explique aussi 81\% de la variance. Néanmoins, il nous semble plus pertinent d'être parcimonieux dans le nombre de variables explicatives à inclure. Dans ce cas, le modèle incluant 6 variables est plus intéressant. On pourrait même considérer le quatrième meilleur modèle selon le critère de Mallows, qui ne contient que 5 variables et pourtant explique toujours 81\% de la variance.
 
-\begin{table}
-	\small
-\begin{tabulary}{1\textwidth}{LlLJ}
-	\hline
 
-	Number in Model &    C(p) &    R-Square &    Variables in Model\\\hline
-	
-	6 &    7.8733 &    0.8152 &    wheelbase length width horsepower fueldummy aspirationdummy\\
-	7 &    8.2218 &    0.8168 &    wheelbase length width horsepower peakrpm fueldummy aspirationdummy\\
-	8 &    8.5198 &    0.8184 &    wheelbase length width bore horsepower peakrpm fueldummy aspirationdummy\\
-	5 &    9.0007 &    0.8122 &    wheelbase length horsepower fueldummy aspirationdummy\\
-	7 &    9.1320 &    0.8159 &    wheelbase length width bore horsepower fueldummy aspirationdummy\\\hline
-	
-\end{tabulary}
-
-\caption{Sélection des 5 meilleurs modèles en fonction du critère de Mallows (C(p)).}
-\label{table:mallows}
-\end{table}
-
-\begin{table}
-\small
-\begin{tabulary}{1\textwidth}{LLLJ}\hline
-	
-	Number in  Model &    Adjusted  R-Square &    R-Square &    Variables in Model\\\hline
-
-	  8 &    0.8108 &    0.8184 &    wheelbase length width bore horsepower peakrpm fueldummy aspirationdummy\\
-	9 &    0.8108 &    0.8194 &    wheelbase length width bore stroke horsepower peakrpm fueldummy aspirationdummy\\
-	10 &    0.8103 &    0.8199 &    wheelbase length width height bore stroke horsepower peakrpm fueldummy aspirationdummy\\
-	7 &    0.8101 &    0.8168 &    wheelbase length width horsepower peakrpm fueldummy aspirationdummy\\
-	9 &    0.8100 &    0.8187 &    wheelbase length width height bore horsepower peakrpm fueldummy aspirationdummy\\\hline
-	
-\end{tabulary}
-\caption{Sélection des 5 meilleurs modèles en fonction du critère du R$^2$}
-\label{table:adjsqr}
-\end{table}
 
 
 \paragraph{Méthodes de type 2}Une deuxième approche est d'inclure ou exclure séquentiellement des variables du modèle. Plusieurs méthodes sont disponibles: forward selection, backward elimination, forward stepwise, etc... Un avantage de ces méthodes est qu'elles sont plus économiques en termes de temps de calcul pour l'ordinateur. Dans le cas d'une inclusion séquentielle, on commence avec la variable indépendante qui explique le plus la variable dépendante (Le plus grand R$^{2}$). Ensuite, on va ajouter séquentiellement des variables, toujours en utilisant ce critère, jusqu'à atteindre le significance level to stop : la p valeur de la variable ajoutée est plus grande qu'une p valeur déterminée. Dans le cas d'une backward élimination, on commence avec toutes les variables, et on supprime séquentiellement. Pour une selection stepwise, on recalcule à chaque étape si on peut supprimer une variable précédemment ajoutée. Nous allons comparer ces trois techniques. Pour la méthode forward selection, nous avons choisi un seuil d'entrée de 0.1. Pour la méthode backward élimination, nous avons choisi un seuil d'élimination de 0.15. Enfin, pour la méthode forward stepwise, les seuils d'entrée et d'élimination étaient de 0.1 et 0.15 respectivement. Dans les tables \ref{table:forward}, \ref{table:backward} et \ref{table:stepwise} en annexe, on peut constater que les 3 méthodes convergent vers la même solution: les variables heigth, stroke, bore et peakrpm sont éliminées, tandis que horsepower, length, fuel, wheelbase, aspiration et width sont conservées. Remarquons que ces méthodes proposent les mêmes 6 variables que le meilleur modèle selon le critère de Mallows.
 %préciser ce passage avec le livre
 %inclure les 3 tables en annexe
 
-\begin{table}
-	\scriptsize
-	\centering
-	\begin{tabulary}{1\textwidth}{LLLLLlLL}
-	  \multicolumn{8}{c}{Summary of Forward Selection}\\\hline
-	Step &    Variable {\newline} Entered &    Number Vars In &    Partial R-Sq &    Model R-Sq &    C(p) &    F Value &    $Pr~>~F$\\\hline
-	1 &    horsepower &    1 &    0.6579 &    0.6579 &    162.071 &    378.80 &    $<$.0001\\
-	2 &    length &    2 &    0.1155 &    0.7734 &    43.5431 &    99.87 &    $<$.0001\\
-	3 &    fueldummy &    3 &    0.0234 &    0.7967 &    21.1259 &    22.45 &    $<$.0001\\
-	4 &    wheelbase &    4 &    0.0105 &    0.8073 &    12.1210 &    10.62 &    0.0013\\
-	5 &    aspirationdummy &    5 &    0.0049 &    0.8122 &    9.0007 &    5.04 &    0.0259\\
-	6 &    width &    6 &    0.0030 &    0.8152 &    7.8733 &    3.11 &    0.0792\\\hline
 
-	\end{tabulary}
-	\caption{Résumé de la méthode de Forward selection : 6 variables sont retenues au seuil $p~<~0.1$.}
-	\label{table:forward}
-\end{table}
 
-\begin{table}
-	\scriptsize
-	\centering
-	\begin{tabulary}{1\textwidth}{LLLLLLLL}
-		
-		\multicolumn{8}{c}{Summary of Backward Elimination}\\\hline
-		Step &    Variable {\newline} Removed &    Number  Vars In &    Partial  R-Sq &    Model {\newline} R-Sq &    C(p) &    F Value &    $Pr~>~F$\\\hline
-	
-		1 &    height &    9 &    0.0005 &    0.8194 &    9.5281 &    0.53 &    0.4683\\
-		2 &    stroke &    8 &    0.0010 &    0.8184 &    8.5198 &    0.99 &    0.3200\\
-		3 &    bore &    7 &    0.0016 &    0.8168 &    8.2218 &    1.71 &    0.1930\\
-		4 &    peakrpm &    6 &    0.0016 &    0.8152 &    7.8733 &    1.65 &    0.2006\\\hline
-	\end{tabulary}
-	\caption{Résumé de la méthode de Backward elimination : 4 variables sont supprimées au seuil $p ~>~ 0.15$}
-	\label{table:backward}
-\end{table}
 
-\begin{table}
-	\scriptsize
-	
-	\begin{tabulary}{1\textwidth}{LLLLLLlll}
-	
-		   \multicolumn{9}{c}{Summary of Stepwise Selection}\\\hline
-		Step &    Variable Entered &    Variable Removed &    Number Vars In &    Partial  R-Sq &    Model  R-Sq &    C(p) &    F Value &    $Pr>F$\\\hline
 
-		1 &    horsepower &      &    1 &    0.6579 &    0.6579 &    162.07 &    378.80 &    $<$.0001\\
-		2 &    length &      &    2 &    0.1155 &    0.7734 &    43.54 &    99.87 &    $<$.0001\\
-		3 &    fueldummy &      &    3 &    0.0234 &    0.7967 &    21.12 &    22.45 &    $<$.0001\\
-		4 &    wheelbase &      &    4 &    0.0105 &    0.8073 &    12.12 &    10.62 &    0.0013\\
-		5 &    aspirationdummy &      &    5 &    0.0049 &    0.81 &    9.0007 &    5.04 &    0.0259\\
-		6 &    width &      &    6 &    0.0030 &    0.8152 &    7.87 &    3.11 &    0.0792\\\hline
-	\end{tabulary}
-	\caption{Résumé de la méthode stepwise forward selection : 6 variables sont retenues au seuil de sélection $p~<0.1$, et aucune variable n'est retirée au seuil $p~>~0.15$}
-	\label{table:stepwise}
-\end{table}
+\paragraph{Méthodes de type 3} Ce type de méthodes est utile lorsque le nombre de variables dans le modèle est très grand. Nous allons utiliser la méthode LASSO vue au cours, via SAS. Ici aussi, l'étape optimale retient les même 6 variables que précédemment (voir table \ref{table:lasso} en annexe).
 
-\paragraph{Méthodes de type 3} Ce type de méthodes est utile lorsque le nombre de variables dans le modèle est très grand. Nous allons utiliser la méthode LASSO vue au cours, via SAS. Ici aussi, l'étape optimale retient les même 6 variables que précédemment.
 
-\begin{table}
-	\scriptsize
-	\centering
-	\begin{tabulary}{1\textwidth}{LLLLL}
-	\hline
-	   \multicolumn{5}{c}{LASSO Selection Summary}\\\hline
-	Step &    Effect {\newline} Entered &    Effect {\newline} Removed &    Number {\newline} Effects In &    BIC \\\hline
-	0 &    Intercept &      &    1 &    245.4286\\
-	1 &    horsepower &      &    2 &    188.7603\\
-	2 &    length &      &    3 &    117.5676\\
-	3 &    width &      &    4 &    $-$22.4925\\
-	4 &    fueldummy &      &    5 &    $-$22.8460\\
-	5 &    wheelbase &      &    6 &    $-$64.1505\\
-	6 &    aspirationdummy &      &    7 &    $-$71.8419*\\
-	7 &    peakrpm &      &    8 &    $-$71.8178\\
-	8 &    stroke &      &    9 &    $-$71.5047\\
-	9 &    bore &      &    10 &    $-$70.8762\\
-	10 &    height &      &    11 &    $-$71.4571\\\hline
-	\multicolumn{5}{c}{*~Optimal~Value~of~Criterion}\\\hline
-	\end{tabulary}
-	\caption{Sélection lasso. Le step optimal est le 6\ieme{}.}
-	\label{table:lasso}
-\end{table}
 
 \paragraph{Modèle sélectionné} Les différentes méthodes que nous avons présenté convergent vers le même modèle à sélectionner, contenant 6 variables.
 
@@ -293,15 +211,29 @@ Les tables \ref{table:mallows} et \ref{table:adjsqr} permettent de comparer les 
 \end{table}
 
 \section{Diagnostic du modèle linéaires et mesures correctrices}
-\subsection{Diagnostic}
+\subsection{Hypothèses sous-jascentes au modèle linéaire}
+\subsubsection{Vérification}
 Nous allons maintenant nous intéresser à la vérification des hypothèses sous-jascentes à la regression.
-Il y a trois principales hypothèses: l'homoscédasticité, la normalité des résidus et l'indépendance des observations. De plus, des observation aberrantes et influentes peuvent influencer la construction du modèle de régression. Les figures \ref{fig:diagnostics} et\ref{fig:regressors} présentent les différents graphes nous permettant de répondre à ces questions.
-
+Il y a trois principales hypothèses: l'homoscédasticité, la normalité des résidus et l'indépendance des observations. 
+Une autre question pertinente est aussi de savoir s'il y a bien une linéarité de la fonction de régression. Les figures \ref{fig:diagnostics} et \ref{fig:regressors} présentent les différents graphes nous permettant de répondre à ces questions.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{fitdiagnostics}
+	\caption{Résumé des différents diagnostiques du modèle de régression}
+	\label{fig:diagnostics}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{resbyregressors}
+	\caption{Graphes des résidus par régresseurs}
+	\label{fig:regressors}
+\end{figure}
 \paragraph{Homoscédasticité} Nous pouvons répondre à cette question en observant le graphe des résidus par rapport aux valeurs prédites. Nous pouvons voir que les erreurs se répartissent aléatoirement autour de 0, indiquant une variance homogène. Il n'y a pas de structure claire se dégageant du graphe.
 Néanmoins, sur la figure \ref{fig:regressors}, nous constatons que la variance des deux variables catégorielles est différente pour chaque niveau. Il y a un problème d'héteroskédasticité pour ces deux variables catégorielles.
 %test homoscé%
 \paragraph{Normalité des résidus} Le Q-Q plot nous permet de comparer les quantiles de notre distribution aux quantiles de la distribution normale. Si tous les points sont sur la diagonale, alors notre distribution est normale. Nous pouvons constater que les résidus sont en moyenne situés sur la droite. Néanmoins, les valeurs extrêmes de la distribution s'écartent de la distribution normale. Sur l'histogramme des résidus, nous pouvons voir que leur densité se rapproche d'une normale. Nous pouvons donc faire l'hypothèse, prudente, que les résidus suivent une distribution normale.
 %testnormalité%
+
 \paragraph{Indépendance des observation} D'un point de vue théorique, chaque modèle de voiture de ce dataset est différent. Néanmoins, il faut être prudent avec cette affirmation. En effet, il est raisonnable de penser qu'un constructeur produisant plusieurs modèle de voiture réutilise certains composants dans différents modèles, offrant des performances similaires. Dans ce cas, il pourrait exister des observations qui ne sont pas indépendantes les unes des autres. Via SAS, nous avons réalisé un test de Durbin-Watson pour l'autocorrélation. Celui-ci indique une autocorrélation positive signification de premier ordre de 0.288.
 \begin{table}
 	\scriptsize
@@ -318,25 +250,96 @@ Néanmoins, sur la figure \ref{fig:regressors}, nous constatons que la variance 
 	\label{table:}
 \end{table}
 % ajouter tests d'autocorrélation d'obs%
-\paragraph{Observations aberrantes}
-Sur le graphe ... nous pouvons observer les leviers par rapport au numéro d'observation. C'est une mesure des observations aberrantes par rapport aux régresseurs.
-Sur le graphe ... nous pouvons observer les résidus effacés studentisés par rapport au numéro d'observation. C'est une mesure des observations aberrantes par rapport  à la réponse.
 
-\paragraph{Observations influentes} Le graphe des DFFITS (figure ...) permet d'observer les observations influentes par rapport aux valeurs prédites
-Le graphe des distances de Cook (figure ...) permet de détecter la présence d'observations influentes sur les valeurs prédites, ainsi que sur les coefficients de la régression.
-
-\subsection{Mesures correctrices}
+\paragraph{Linéarité de la fonction de régression} Afin de répondre à cette question, il faut regarder les graphes des régresseurs en fonction des résidus. Sur la figure \ref{fig:regressors}, on constate que chaque régresseur à une relation linéaire avec les résidus. Si un régresseur avait une relation quadratique, on aurait pu ajouter un terme au carré afin de corriger ce problème.
+\subsubsection{Correction}
 \paragraph{Correction de l'heteroskedasticité et de l'autocorrélation}
-Nous avons vu que la variance des variables catégorielles n'était pas homogène. En outre, il y avait une autocorrélation de premier ordre significative. Elle était certes faible, mais nous avons voulu la corriger. Comme suggéré précédemment, la non-indépendance provient peut-être du fait que les différents modèles de voiture provenant d'un même constructeur ont des caractéristiques similaires. Comme suggéré par Neter(2004), une solution possible à cette autocorrélation est d'inclure des variables indépendantes susceptibles d'être la source de cette non indépendance. Ainsi, nous avons relancé un modèle en ajoutant les modèles de voitures comme variables indépendantes. De plus, afin de corriger l'hétéroscédasticité, nous avons réalisé une transformation de box-cox sur la variable dépendantes.
-
-\paragraph{Correction des observations influentes et aberrantes}
-...
+Nous avons vu que la variance des variables catégorielles n'était pas homogène. En outre, il y avait une autocorrélation de premier ordre significative. Elle était certes faible, mais nous avons voulu la corriger. Comme suggéré précédemment, la non-indépendance provient peut-être du fait que les différents modèles de voiture provenant d'un même constructeur ont des caractéristiques similaires. Comme suggéré par Neter(2004), une solution possible à cette autocorrélation est d'inclure des variables indépendantes susceptibles d'être la source de cette non indépendance. Ainsi, nous avons relancé un modèle en ajoutant les modèles de voitures comme variables indépendantes. Etant donné qu'il y avait 21 modèles de voitures, cela nous rajoute 20 variables catégorielles dans le modèle, le complexifiant énormément. De plus, afin de corriger l'hétéroscédasticité, nous avons réalisé une transformation de box-cox sur la variable dépendantes. La transformation de Box-Cox est une transformation sur la variable dépendante, selon un paramètre $\lambda$. La formule est donnée par : $Y' = \dfrac{y^{\lambda} - 1}{\lambda}$ pour $ \lambda \neq 0$. Ce paramètre $\lambda$ est estimé par le logiciel selon la méthode du maximum de vraisemblance. Dans notre cas, SAS a choisi $\lambda = 0.5$.
 
 
-\paragraph{Modèle final après corrections}
-Sur le graphe ... nous pouvons constater que les variances des prédicteurs catégoriels est maintenant beaucoup plus homogène.
-De plus, le test de Durbin-Watson pour l'autocorrélation nous montre que celle-ci à été fortement réduite, passant a 0.054. Néanmoins, elle est toujours significative, indiquant qu'il existe toujours une petite source d'autocorrélation, non-identifiée.
+\subsection{Observations aberrantes et influentes}
+ De plus, des observation aberrantes et influentes peuvent influencer la construction du modèle de régression. Nous avons calculés ces observations après correction du modèle par rapport aux hypothèses sous-jascentes. Les graphes relatifs aux observations aberrantes et influentes sont en annexe.
+\paragraph{Observations aberrantes}
+Sur le graphe \ref{fig:leverage} nous pouvons observer les leviers par rapport au numéro d'observation. C'est une mesure des observations aberrantes par rapport aux régresseurs. On peut utiliser comme limite d'identification des leviers $L>\frac{2p}{n}$. Dans notre cas, cette limite est de 0.27.
 
+
+Sur le graphe \ref{fig:stud} nous pouvons observer les résidus effacés studentisés par rapport au numéro d'observation. C'est une mesure des observations aberrantes par rapport  à la réponse Y.
+On peut utiliser comme règle de décision $|d_{i}^{*}| > t_{171;0.975; = 1.960}$ afin de considérer les observation comme aberrantes par rapport à Y.
+
+\paragraph{Observations influentes} Le graphe des DFFITS (figure \ref{fig:dfits}) permet d'observer les observations influentes par rapport aux valeurs prédites. On peut calculer la valeur limite, dans notre cas, par $|DFITT|= 2 \times \sqrt{27/199} = 0.7366$. Les observations en dehors de cette valeur seront considérées comme influentes. Sur le graphe, on peut voir que quelques valeurs peuvent être considérées comme influentes. Le graphe des distances de Cook (figure \ref{fig:cookd}) permet de détecter la présence d'observations influentes sur les valeurs prédites, ainsi que sur les coefficients de la régression. On peut décider qu'une observation est influente via la règle, dans notre cas, $D_{i} > F_{27,172;0.95} = 1.55$. On peut constater qu'aucune valeur ne dépasse ce seuil.
+
+\paragraph{Correction des observations aberrantes}
+Il y a plusieurs mesures correctrices possibles. La première est d'ajouter des variables indépendantes qui auraient pu être oubliées. Il est aussi possible d'ajouter des termes d'interaction et quadratiques. Une mesure simple, mais manquant d'élégance -- et pourtant systématiquement employée dans le milieu de la recherche en psychologie -- est de supprimer ces observation aberrantes.  Dans notre cas, on pourrait essayer d'ajouter des variables ou des interactions. Néanmoins, notre première mesure correctrice à déjà ajouté beaucoup de variables dans le modèle, le complexifiant. En utilisant les critères plus haut, nous avons calculé qu'il y avait 25 observation influentes dans le dataset. Si nous décidions de supprimer ces observation, cela ferait beaucoup à enlever, risquant de biaiser l'échantillon.  On pourrait se retrouver avec des modèles de voitures n'étant plus représentées dans cet échantillon. En effet, en analysant plus finement les observations considérées comme aberrantes, nous avons remarquées que celles-ci étaient exclusivement des observations en provenance de marques de voitures sous-représentées dans l'échantillon. Dans ce cas, il n'est pas convenable de supprimer ces observations. Nous allons donc les garder.
+
+\paragraph{Correction des observation influentes} Etant donné qu'il n'y a pas ou peu d'observation influentes, nous avons décidé de ne pas les enlever.
+
+
+\subsection{Modèle final après corrections}
+Sur le graphe \ref{fig:regressorscorr} nous pouvons constater que les variances des prédicteurs catégoriels est maintenant beaucoup plus homogène.
+De plus, le test de Durbin-Watson(table \ref{table:dwcorrected}) pour l'autocorrélation nous montre que celle-ci à été fortement réduite, passant a 0.054. Néanmoins, elle est toujours significative, indiquant qu'il existe toujours une petite source d'autocorrélation, non-identifiée.
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1\linewidth]{resbyregressorscorr}
+	\caption{Graphes des résidus par régresseurs, modèle corrigé}
+	\label{fig:regressorscorr}
+\end{figure}
+\begin{table}
+	\scriptsize
+	\centering
+\begin{tabulary}{1\textwidth}{LLLLLL}\hline
+	\multicolumn{6}{c}{Analysis of Variance}\\\hline
+	Source &    DF &    Sum of {\newline} Squares &    Mean {\newline} Square &    F Value &    $Pr~>~F$\\\hline
+	Model &    26 &    71.45596 &    2.74831 &    50.93 &    $<$.0001\\\hline
+	Error &    172 &    9.28210 &    0.05397 &      &     \\\hline
+	Corrected Total &    198 &    80.73806 &      &      &     \\\hline
+\end{tabulary}
+
+\vspace{5mm}
+
+\begin{tabulary}{1\textwidth}{LLLL}\hline
+	Root MSE &    0.23231 &    R-Square &    0.8850\\\hline
+	Dependent Mean &    3.62184 &    Adj R-Sq &    0.8677\\\hline
+	Coeff Var &    6.41400 &      &     \\\hline
+\end{tabulary}
+
+\vspace{5mm}
+
+\begin{tabulary}{1\textwidth}{LLLLLL}\hline
+	\multicolumn{6}{c}{Parameter Estimates}\\\hline
+	Variable &     DF &    Parameter {\newline} Estimate &    Standard Error &    t~Value &    $Pr~>~|t|$\\\hline
+	Intercept  &    1 &    1.51831 &    1.16128 &    1.31 &    0.1928\\\hline
+	wheelbase      &    1 &    0.00149 &    0.00350 &    0.43 &    0.6703\\\hline
+	length       &    1 &    0.00757 &    0.00169 &    4.47 &    $<$.0001\\\hline
+	width      &    1 &    $-$0.01703 &    0.00848 &    $-$2.01 &    0.0462\\\hline
+	horsepower       &    1 &    0.00970 &    0.00099419 &    9.76 &    $<$.0001\\\hline
+	fueldummy       &    1 &    $-$0.25512 &    0.04049 &    $-$6.30 &    $<$.0001\\\hline
+	aspirationdummy &         1 &    0.05965 &    0.03127 &    1.91 &    0.0581\\\hline
+	makealfa{\textunderscore}rom &     1 &    0.19949 &    0.18123 &    1.10 &    0.2725\\\hline
+	makeaudi &       1 &    0.40580 &    0.12018 &    3.38 &    0.0009\\\hline
+	makebmw &        1 &    0.00791 &    0.11774 &    0.07 &    0.9465\\\hline
+	makechevrole &        1 &    $-$0.36691 &    0.17746 &    $-$2.07 &    0.0402\\\hline
+	makedodge &        1 &    0.03518 &    0.12475 &    0.28 &    0.7783\\\hline
+	makehonda &     1 &    0.04394 &    0.11959 &    0.37 &    0.7137\\\hline
+	makeisuzu &    1 &    $-$0.03369 &    0.15311 &    $-$0.22 &    0.8261\\\hline
+	makejaguar &        1 &    0.29561 &    0.16727 &    1.77 &    0.0790\\\hline
+	makemazda &        1 &    0.01375 &    0.10973 &    0.13 &    0.9004\\\hline
+	makemercedes &        1 &    0.75409 &    0.12097 &    6.23 &    $<$.0001\\\hline
+	makemercury &        1 &    $-$0.14793 &    0.24914 &    $-$0.59 &    0.5535\\\hline
+	makemitsubis &        1 &    0.00513 &    0.11195 &    0.05 &    0.9635\\\hline
+	makenissan &       1 &    $-$0.07021 &    0.10892 &    $-$0.64 &    0.5201\\\hline
+	makepeugot &       1 &    0.33728 &    0.10528 &    3.20 &    0.0016\\\hline
+	makeplymouth &      1 &    $-$0.02969 &    0.12848 &    $-$0.23 &    0.8175\\\hline
+	makeporsche &        1 &    $-$0.45421 &    0.18292 &    $-$2.48 &    0.0140\\\hline
+	makesaab &       1 &    $-$0.19943 &    0.13100 &    $-$1.52 &    0.1298\\\hline
+	makesubaru &       1 &    0.19383 &    0.11209 &    1.73 &    0.0856\\\hline
+	maketoyota &       1 &    $-$0.03065 &    0.09664 &    $-$0.32 &    0.7515\\\hline
+	makevolkswag &        1 &    0.06063 &    0.11148 &    0.54 &    0.5872\\\hline
+\end{tabulary}
+	\caption{Modèle final après corrections}
+	\label{table:Modfinal}
+\end{table}
 
 \begin{table}
 	\scriptsize
@@ -352,35 +355,50 @@ De plus, le test de Durbin-Watson pour l'autocorrélation nous montre que celle-
 	\label{table:dwcorrected}
 \end{table}
 
-\begin{figure}
-	\centering
-	\includegraphics[width=1\linewidth]{fitdiagnostics}
-	\caption{Résumé des différents diagnostiques du modèle de régression}
-	\label{fig:diagnostics}
-\end{figure}
-\begin{figure}
-	\centering
-	\includegraphics[width=1\linewidth]{resbyregressors}
-	\caption{Graphes des résidus par régresseurs}
-	\label{fig:regressors}
-\end{figure}
+\section{Interprétation du modèle} Etant donné que nous avons introduit les marques de voiture comme contrôle de l'autocorrélation, nous ne les interpréterons pas ici.
+Une première remarque quant à ce modèle est le $R^2$ de 0.88, indiquant un fort ajustement du modèle, captant la quasi intégralité de la variance, ne laissant que 12\% d'erreur.
+Néanmoins, remarquons les problèmes d'overfitting que ce modèle implique. En effet, en utilisant 20 degrés de libertés pour corriger les problèmes d'autocorrélation, nous introduisons beaucoup de complexité dans le modèles. Il est important de savoir que trop de variables dans un modèle linéaire peut conduire à une surestimation de la significativité des coefficients. Dans le milieu de la recherche scientifique, il est souvent mal vu d'introduire trop de variables contrôles dans un modèle de régression. Mais ce n'est pas l'objet de ce travail. Notons aussi que la transformation de Box-Cox rend l'interprétation des coefficients plus difficile. En effet, ceux-ci ne reflètent plus la variable dépendante d'origine, mais une variable transformée. L'interprétation ne peut donc se faire qu'en terme de signes des coefficients (A moins de réaliser la transformation inverse).
+Globalement,  la variable horsepower explique le plus la consommation de carburant. Ceci est logique étant donné que plus un moteur est puissant, plus on s'attend à ce qu'il consomme du carburant afin de délivrer cette puissance. Vient ensuite le type de carburant, mais nous interpréterons cette variable catégorielle plus bas. Ensuite, la longueur influence aussi la consommation de carburant; plus une voiture est longue, plus elle consomme de carburant. Une voiture plus longue implique un plus grand volume, et donc plus de poids, nécessitant plus d'énergie pour la faire avancer. De façon marginale, la largeur influence négativement la consommation de carburant. Notons que ce coefficient est difficile à interpréter, étant donné que dans le premier modèle, celui-ci était positif. Etant donné la significativité marginale, il est raisonnable de penser que nous nous trouvons dans une situation ou l'hypothèse H0 est rejetée à tort. Dans ce cas, il est plus prudent de ne pas interpréter ce coefficient. Wheelbase n'est pas significatif, mais étant corrélé à length, il est possible que la variance que celui-ci explique a été captée par length. Notons aussi l'intercept, qui représente la valeur de Y lorsque tous les prédicteurs sont à 0. Néanmoins, nous pensons qu'il est hasardeux d'interpréter un intercept, surtout lorsque la variable dépendante a été transformée.
+
+\section{Test des prédicteurs catégoriels}
+Nous avions codé, manuellement, des codes de contrastes pour les deux variables catégorielles.
+Ainsi, pour la variable fuel nous avons attribué la valeur "-1" si le carburant était l'essence, et "1" si le carburant était le diesel. Pour la variable aspiration, nous avons attribué la valeur "-1" si l'arrivée d'air était standard, et "1" s'il y avait une aspiration turbo.
+Sur le tableau \ref{table:Modfinal} on peut constater que seul la variable catégorielle correspondant au type de carburant est significative. Comme nous avons utilisé des codes de contrastes, il est facile d'interpréter les coefficients $\beta$ estimés. Comme ce coefficient est négatif, cela indique que lorsque le carburant est diesel, le moteur consomme moins de carburant. Inversement pour l'essence. L'aspiration est à la limite de la significativité. Nous voyons qu'une aspiration turbo augmentera la consommation, et une aspiration standard la diminuera. 
+En ajoutant un terme d'interaction au modèle (tableau non inclu pour des raison d'économie de pages) nous remarquons que le terme d'interaction n'est pas significatif (p=0.32). De plus, en ajoutant ce terme d'interaction, la variable aspiration n'est plus significative (p=0.24). La variable fuel reste significative (p<0.000). Comme ce terme d'interaction n'est pas significatif, nous allons le retirer du modèle. Ceci est logique, en se référant au graphe \ref{fig:meanauto}: les droites sont quasiment parallèles, indiquant, de manière graphique, qu'il n'y a pas d'interaction entre les deux variables.
 
 \section{Prédiction}
 
-On peut également tenter de calculer l'intervalle de prédiction sur une nouvelle valeur. La première étape consiste à choisir cette nouvelle valeur sur laquelle estimer l'intervalle. Pour ce faire, on peut demander à l'ordinateur de générer une nouvelle variable avec une distribution de moyenne et variance égale à celle de chacune des variables. On peut alors ensuite appliquer notre modèle à cette valeur, et calculer l'intervalle de prédiction et l'intervalle de confiance autour de cette valeur. On fixera la valeur de alpha à 0.95 pour le calcul des intervalles.
+On peut également tenter de calculer l'intervalle de prédiction sur une nouvelle valeur. La première étape consiste à choisir cette nouvelle valeur sur laquelle estimer l'intervalle. Pour ce faire, on peut demander à l'ordinateur de générer une nouvelle valeur avec une distribution de moyenne et variance égale à celle de chacune des variables. On peut alors ensuite appliquer notre modèle à cette valeur, et calculer l'intervalle de prédiction et l'intervale de confiance autour de cette valeur. On fixera la valeur de alpha à 0.95 pour le calcul des intervalles.
 
 Si on calcule l'intervalle de prédiction sur une nouvelle donnée construite par cette méthode, on obtient une valeur prédite de 6.577 et un intervalle compris entre 4.86 et 8.29. Si les valeurs semblent à priori raisonnables (elles ne sont en effet pas très éloignées de la moyenne de la variable dépendante), il peut néanmoins être frustrant de constater la largeur de l'intervalle de prédiction. La borne supérieure est en effet près du double de la borne inférieure (1.7 fois celle-ci exactement). La largeur de cet intervalle est peut-être normal, mais il est intéressant de se poser la question de ce qui a pu aller de travers et provoquer cet intervalle qui semble excessivement large.
 
 Si on considère que cet intervalle large n'est pas naturel et provient d'une erreur dans le modèle, on peut rechercher d'où provient ce résultat. On pourrait penser que la transformation, en modifiant les unité pourrait être à l'origine de cet écart démesuré. Néanmoins, la même technique appliquée aux unités d'origine donne un résultat similaire au résultat obtenu précédemment. 
-
 Il est donc plus probable que l'intervalle, aussi large qu'il soit est tout simplement l'intervalle de prediction correct pour le modèle sélectionné.
 
-L'intervalle de confiance est lui bien plus étroit, étant compris entre 5.95 et 7.20. On voit ici assez clairement la différence entre les deux. La différence entre les deux bornes est de 3.43 pour l'intervalle de prédiction et de 1.07 pour l'intervalle de confiance.
+\section{Intervalle de confiance de la variance de l'erreur}
+Pour cette question, la réponse n'est pas explicite. Néanmoins, en sachant que la somme des carrés de l'erreur peut être considéré comme la variance de l'erreur du modèle, il est possible de construire un intervalle de confiance autour de cette variance, en utilisant les formules classiques d'inférence:
+\begin{equation*}
+\Bigg[\dfrac{(n-1)s^{2}}{\chi^{2}_{n-1;\alpha/2}},\dfrac{(n-1)s^{2}}{\chi^{2}_{n-1;1-\alpha/2}}\Bigg]
+\end{equation*}
+\newline
 
+Dans notre cas:
+\begin{equation*}
+\Bigg[\dfrac{198 \times 9.28}{\chi^{2}_{198;0.025}},\dfrac{198 \times 9.28}{\chi^{2}_{198;0.975}}\Bigg]
+\end{equation*}
+
+
+L'intervalle de confiance ainsi créé est :
+$[7.72,11.48]$
+
+\section{Conclusion}
+Ce travail nous a permis d'explorer en profondeur les différentes possibilités permettant de raffiner un modèle linéaire. Nous avons montré comment sélectionner les variables un modèle, vérifier les hypothèses sous-jascentes à la régression, et comment détecter les valeurs aberrantes et influentes. Une limite importante à ce travail est probablement la présence d'une non indépendance des observation, étant donné que certaines voitures ont des caractéristiques en commun. Néanmoins, celle-ci a pu être contrôlée via l'ajout des constructeurs de voiture comme prédicteurs. De plus, une autre limite est la transformation de Box-Cox, qui rend difficile l'interprétation des coefficients. Nous aurions pu aussi utiliser la méthode des moindres carrés pondérés afin de contrôler l'hétéroscédasticité.
+\newpage
+\FloatBarrier
 \section{Annexes}
 \appendix
 \section{Vérification des VIF}
-\begin{table}
+\begin{table}[h]
 	\scriptsize
 	\centering
 	\begin{tabulary}{1\textwidth}{|L|R|R|R|R|R|R|R|R|R|R|}
@@ -403,4 +421,142 @@ peakrpm &    $-$0.35 &    $-$0.28 &    $-$0.22 &    $-$0.28 &    $-$0.27 &    $-
 			\caption{Corrélations entre les variables numériques: on remarque que curbweigth, enginesize et horsepower sont fortement corrélées entre elles}
 			\label{table:corrvif}
 		\end{table}
+\FloatBarrier
+\section{Sorties de la sélection du modèle}
+\begin{table}[h]
+	\small
+	\begin{tabulary}{1\textwidth}{LlLJ}
+		\hline
+		
+		Number in Model &    C(p) &    R-Square &    Variables in Model\\\hline
+		
+		6 &    7.8733 &    0.8152 &    wheelbase length width horsepower fueldummy aspirationdummy\\
+		7 &    8.2218 &    0.8168 &    wheelbase length width horsepower peakrpm fueldummy aspirationdummy\\
+		8 &    8.5198 &    0.8184 &    wheelbase length width bore horsepower peakrpm fueldummy aspirationdummy\\
+		5 &    9.0007 &    0.8122 &    wheelbase length horsepower fueldummy aspirationdummy\\
+		7 &    9.1320 &    0.8159 &    wheelbase length width bore horsepower fueldummy aspirationdummy\\\hline
+		
+	\end{tabulary}
+	
+	\caption{Sélection des 5 meilleurs modèles en fonction du critère de Mallows (C(p)).}
+	\label{table:mallows}
+\end{table}
+
+\begin{table}[h]
+	\small
+	\begin{tabulary}{1\textwidth}{LLLJ}\hline
+		
+		Number in  Model &    Adjusted  R-Square &    R-Square &    Variables in Model\\\hline
+		
+		8 &    0.8108 &    0.8184 &    wheelbase length width bore horsepower peakrpm fueldummy aspirationdummy\\
+		9 &    0.8108 &    0.8194 &    wheelbase length width bore stroke horsepower peakrpm fueldummy aspirationdummy\\
+		10 &    0.8103 &    0.8199 &    wheelbase length width height bore stroke horsepower peakrpm fueldummy aspirationdummy\\
+		7 &    0.8101 &    0.8168 &    wheelbase length width horsepower peakrpm fueldummy aspirationdummy\\
+		9 &    0.8100 &    0.8187 &    wheelbase length width height bore horsepower peakrpm fueldummy aspirationdummy\\\hline
+		
+	\end{tabulary}
+	\caption{Sélection des 5 meilleurs modèles en fonction du critère du R$^2$}
+	\label{table:adjsqr}
+\end{table}
+\begin{table}[h]
+	\scriptsize
+	\centering
+	\begin{tabulary}{1\textwidth}{LLLLLlLL}
+		\multicolumn{8}{c}{Summary of Forward Selection}\\\hline
+		Step &    Variable {\newline} Entered &    Number Vars In &    Partial R-Sq &    Model R-Sq &    C(p) &    F Value &    $Pr~>~F$\\\hline
+		1 &    horsepower &    1 &    0.6579 &    0.6579 &    162.071 &    378.80 &    $<$.0001\\
+		2 &    length &    2 &    0.1155 &    0.7734 &    43.5431 &    99.87 &    $<$.0001\\
+		3 &    fueldummy &    3 &    0.0234 &    0.7967 &    21.1259 &    22.45 &    $<$.0001\\
+		4 &    wheelbase &    4 &    0.0105 &    0.8073 &    12.1210 &    10.62 &    0.0013\\
+		5 &    aspirationdummy &    5 &    0.0049 &    0.8122 &    9.0007 &    5.04 &    0.0259\\
+		6 &    width &    6 &    0.0030 &    0.8152 &    7.8733 &    3.11 &    0.0792\\\hline
+		
+	\end{tabulary}
+	\caption{Résumé de la méthode de Forward selection : 6 variables sont retenues au seuil $p~<~0.1$.}
+	\label{table:forward}
+\end{table}
+
+\begin{table}[h]
+	\scriptsize
+	\centering
+	\begin{tabulary}{1\textwidth}{LLLLLLLL}
+		
+		\multicolumn{8}{c}{Summary of Backward Elimination}\\\hline
+		Step &    Variable {\newline} Removed &    Number  Vars In &    Partial  R-Sq &    Model {\newline} R-Sq &    C(p) &    F Value &    $Pr~>~F$\\\hline
+		
+		1 &    height &    9 &    0.0005 &    0.8194 &    9.5281 &    0.53 &    0.4683\\
+		2 &    stroke &    8 &    0.0010 &    0.8184 &    8.5198 &    0.99 &    0.3200\\
+		3 &    bore &    7 &    0.0016 &    0.8168 &    8.2218 &    1.71 &    0.1930\\
+		4 &    peakrpm &    6 &    0.0016 &    0.8152 &    7.8733 &    1.65 &    0.2006\\\hline
+	\end{tabulary}
+	\caption{Résumé de la méthode de Backward elimination : 4 variables sont supprimées au seuil $p ~>~ 0.15$}
+	\label{table:backward}
+\end{table}
+\begin{table}[h]
+	\scriptsize
+	
+	\begin{tabulary}{1\textwidth}{LLLLLLlll}
+		
+		\multicolumn{9}{c}{Summary of Stepwise Selection}\\\hline
+		Step &    Variable Entered &    Variable Removed &    Number Vars In &    Partial  R-Sq &    Model  R-Sq &    C(p) &    F Value &    $Pr>F$\\\hline
+		
+		1 &    horsepower &      &    1 &    0.6579 &    0.6579 &    162.07 &    378.80 &    $<$.0001\\
+		2 &    length &      &    2 &    0.1155 &    0.7734 &    43.54 &    99.87 &    $<$.0001\\
+		3 &    fueldummy &      &    3 &    0.0234 &    0.7967 &    21.12 &    22.45 &    $<$.0001\\
+		4 &    wheelbase &      &    4 &    0.0105 &    0.8073 &    12.12 &    10.62 &    0.0013\\
+		5 &    aspirationdummy &      &    5 &    0.0049 &    0.81 &    9.0007 &    5.04 &    0.0259\\
+		6 &    width &      &    6 &    0.0030 &    0.8152 &    7.87 &    3.11 &    0.0792\\\hline
+	\end{tabulary}
+	\caption{Résumé de la méthode stepwise forward selection : 6 variables sont retenues au seuil de sélection $p~<0.1$, et aucune variable n'est retirée au seuil $p~>~0.15$}
+	\label{table:stepwise}
+\end{table}
+\begin{table}[h]
+	\scriptsize
+	\centering
+	\begin{tabulary}{1\textwidth}{LLLLL}
+		\hline
+		\multicolumn{5}{c}{LASSO Selection Summary}\\\hline
+		Step &    Effect {\newline} Entered &    Effect {\newline} Removed &    Number {\newline} Effects In &    BIC \\\hline
+		0 &    Intercept &      &    1 &    245.4286\\
+		1 &    horsepower &      &    2 &    188.7603\\
+		2 &    length &      &    3 &    117.5676\\
+		3 &    width &      &    4 &    $-$22.4925\\
+		4 &    fueldummy &      &    5 &    $-$22.8460\\
+		5 &    wheelbase &      &    6 &    $-$64.1505\\
+		6 &    aspirationdummy &      &    7 &    $-$71.8419*\\
+		7 &    peakrpm &      &    8 &    $-$71.8178\\
+		8 &    stroke &      &    9 &    $-$71.5047\\
+		9 &    bore &      &    10 &    $-$70.8762\\
+		10 &    height &      &    11 &    $-$71.4571\\\hline
+		\multicolumn{5}{c}{*~Optimal~Value~of~Criterion}\\\hline
+	\end{tabulary}
+	\caption{Sélection lasso. Le step optimal est le 6\ieme{}.}
+	\label{table:lasso}
+\end{table}
+\FloatBarrier
+\section{Graphes des valeurs aberrantes et influentes}
+\begin{figure}[h]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{leverage}
+		\caption{Graphes des leviers par numéro d'observation}
+		\label{fig:leverage}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphics[width=1\linewidth]{delstudent}
+		\caption{Graphes des résidus effacés studentisés par numéro d'observation}
+		\label{fig:stud}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphics[width=1\linewidth]{dfits}
+		\caption{Graphes des DFITTS par numéro d'observation}
+		\label{fig:dfits}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphics[width=1\linewidth]{cookd}
+		\caption{Graphes des distances de cooks par numéro d'observation}
+		\label{fig:cookd}
+	\end{subfigure}
+	\caption{Graphes des différentes mesures de valeurs aberrantes et influentes, par observation}
+\end{figure}
 \end{document}
