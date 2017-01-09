@@ -11,10 +11,13 @@
 \usepackage{rotating}
 \usepackage{subcaption}
 \usepackage[font=small,labelfont=bf]{caption}
+\usepackage{listings}
+\lstloadlanguages{SAS}
 \author{Axel Struys - Alexis Buckens}
 \title{LSTAT2120 - Modèles linéaires - Projet\\ Prédiction de la consommation de carburant en fonction de différents paramètres }
 
 \begin{document}
+
 \maketitle
 \section{Introduction}
 Pour réaliser ce projet, nous avons choisi une base de données en provenance de l'UCI machine learning repository. Afin d'analyser les données, nous avons utilisé SAS university edition et R.
@@ -23,7 +26,7 @@ Le dataset contenait à l'origine 26 variables: 16 continues et 10 nominales. Po
 Il y avait 205 observations à l'origine, mais pour 6 d'entre-elles, il y avait des valeurs manquantes. Nous avons supprimé ces observations. Le dataset ainsi nettoyé contient 199 observations.
 
 \paragraph{Description des variables} 
-Dans la table \ref{table:desc} nous présentons les statistiques descriptives pour les 13 variables continues, ainsi que les unités correspondantes. La table \ref{table:freq} présente les fréquences observées des deux variables discrètes : Aspiration et Engine type. Ces deux variables ont deux niveaux. On peut remarquer que les fréquences observées ne correspondent pas aux fréquences attendues: 40 observations par cellule. Pour l'analyse de la variance, nous sommes donc dans une situation où les cellules sont de tailles inégales.
+Dans la table \ref{table:desc} nous présentons les statistiques descriptives pour les 13 variables continues, ainsi que les unités correspondantes. En annexe A se trouve une matrice de corrélation entre les variables continue. La table \ref{table:freq} présente les fréquences observées des deux variables discrètes : Aspiration et Engine type. Ces deux variables ont deux niveaux. On peut remarquer que les fréquences observées ne correspondent pas aux fréquences attendues: 40 observations par cellule. Pour l'analyse de la variance, nous sommes donc dans une situation où les cellules sont de tailles inégales.
 Brève description des variables:
 \begin{enumerate}
 \item Wheelbase: c'est la distance entre les roues avant et arrière de la voiture
@@ -40,10 +43,6 @@ Brève description des variables:
 \item Highwaylkm100: consommation de carburant sur l'autoroute, en litres par 100 km.
 
 \end{enumerate}
-
-
-
-
 
 Enfin, la table \ref{table:mean} présente la moyenne de consommation sur autoroute en fonction du type de carburant et du type d'aspiration d'air.
 Ce tableau est représenté graphiquement sur la figure \ref{fig:meanauto}. De façon purement descriptive, on peut constater une consommation de carburation supérieure pour une aspiration de type turbo, ainsi qu'une consommation supérieure pour l'essence par rapport au diesel. Néanmoins,  nous devrons confirmer ces affirmation en testant les effets principaux de ces variables, ce que nous feront plus loin dans ce travail.
@@ -110,7 +109,7 @@ Ce tableau est représenté graphiquement sur la figure \ref{fig:meanauto}. De f
 	\caption{Moyenne de la consommation (L/100km) en fonction du type de carburant et de l'aspiration}
 	\label{fig:meanauto}
 \end{figure}
-
+\FloatBarrier
 \section{Sélection du modèle de régression}
 
 \subsection{Multicolinéarité}
@@ -127,18 +126,18 @@ Nous avons lancé un premier modèle via SAS en incluant toutes les variables af
 		\multicolumn{7}{c}{Parameter Estimates}\\\hline
 		Variable &    DF &    Parameter  Estimate &    Standard  Error &    t~Value &    $Pr ~>~ |t|$ &    Variance  Inflation\\\hline
 		
-	Intercept &    1 &    $-$2.68801 &    2.81974 &    $-$0.95 &    0.3417 &    0\\\hline
-	wheelbase &    1 &    $-$0.00454 &    0.00765 &    $-$0.59 &    0.5537 &    7.51130\\\hline
-	length &    1 &    0.00685 &    0.00407 &    1.68 &    0.0938 &    8.93723\\\hline
-	width &    1 &    0.00656 &    0.01855 &    0.35 &    0.7241 &    5.64192\\\hline
-	height &    1 &    0.01087 &    0.01079 &    1.01 &    0.3151 &    2.31344\\\hline
-	curbweight &    1 &    0.00381 &    0.00067915 &    5.61 &    $<$.0001 &    14.19486\\\hline
-	enginesize &    1 &    1.55782 &    0.20856 &    7.47 &    $<$.0001 &    10.80793\\\hline
-	bore &    1 &    $-$0.19462 &    0.09008 &    $-$2.16 &    0.0320 &    2.11806\\\hline
-	stroke &    1 &    $-$0.23587 &    0.06268 &    $-$3.76 &    0.0002 &    1.32045\\\hline
-	horsepower &    1 &    $-$0.00822 &    0.00337 &    $-$2.44 &    0.0158 &    9.79074\\\hline
-	peakrpm &    1 &    0.00048201 &    0.00013387 &    3.60 &    0.0004 &    2.10236\\\hline
-	fueldummy &    1 &    $-$1.09864 &    0.10096 &    $-$10.88 &    $<$.0001 &    1.98744\\\hline
+	Intercept &    1 &    $-$2.68801 &    2.81974 &    $-$0.95 &    0.3417 &    0\\
+	wheelbase &    1 &    $-$0.00454 &    0.00765 &    $-$0.59 &    0.5537 &    7.51130\\
+	length &    1 &    0.00685 &    0.00407 &    1.68 &    0.0938 &    8.93723\\
+	width &    1 &    0.00656 &    0.01855 &    0.35 &    0.7241 &    5.64192\\
+	height &    1 &    0.01087 &    0.01079 &    1.01 &    0.3151 &    2.31344\\
+	curbweight &    1 &    0.00381 &    0.00067915 &    5.61 &    $<$.0001 &    14.19486\\
+	enginesize &    1 &    1.55782 &    0.20856 &    7.47 &    $<$.0001 &    10.80793\\
+	bore &    1 &    $-$0.19462 &    0.09008 &    $-$2.16 &    0.0320 &    2.11806\\
+	stroke &    1 &    $-$0.23587 &    0.06268 &    $-$3.76 &    0.0002 &    1.32045\\
+	horsepower &    1 &    $-$0.00822 &    0.00337 &    $-$2.44 &    0.0158 &    9.79074\\
+	peakrpm &    1 &    0.00048201 &    0.00013387 &    3.60 &    0.0004 &    2.10236\\
+	fueldummy &    1 &    $-$1.09864 &    0.10096 &    $-$10.88 &    $<$.0001 &    1.98744\\
 	aspirationdummy &    1 &    0.58015 &    0.08188 &    7.09 &    $<$.0001 &    2.18891\\\hline
 	\end{tabulary}
 
@@ -148,7 +147,7 @@ Nous avons lancé un premier modèle via SAS en incluant toutes les variables af
 
 \subsection{Méthodes de sélections du modèle de régression}
 
-Après avoir vérifié la multicolinéarité, plusieurs méthodes sont disponibles afin de sélectionner les variables à inclure dans le modèle final. 
+Après avoir vérifié la multicolinéarité, plusieurs méthodes sont disponibles afin de sélectionner les variables à inclure dans le modèle final. Les sorties relatives à cette section se trouvent en annexe \ref{annex:selmodel}.
 
 \paragraph{Méthodes de type 1} Il est possible de choisir le meilleur modèle parmi tous les modèles possibles, sur base d'un critère; Nous comparerons ici le critère de Mallows et le critère du coefficient de détermination ajusté. Grâce à SAS, nous pouvons rapidement calculer le meilleur modèles. Un inconvénient majeur de ces méthodes est que plus le nombre de variables dans le modèle augmente, plus cela demande de ressources de calcul étant donné que le logiciel doit calculer toutes les permutations possibles. Dans notre cas, le nombre de variable de bases est raisonnable, ce qui permet l'emploi de ces méthodes.
 %2 tables pour comparer les deux critères -> annexe
@@ -160,10 +159,6 @@ Les tables \ref{table:mallows} et \ref{table:adjsqr} en annexe permettent de com
 \paragraph{Méthodes de type 2}Une deuxième approche est d'inclure ou exclure séquentiellement des variables du modèle. Plusieurs méthodes sont disponibles: forward selection, backward elimination, forward stepwise, etc... Un avantage de ces méthodes est qu'elles sont plus économiques en termes de temps de calcul pour l'ordinateur. Dans le cas d'une inclusion séquentielle, on commence avec la variable indépendante qui explique le plus la variable dépendante (Le plus grand R$^{2}$). Ensuite, on va ajouter séquentiellement des variables, toujours en utilisant ce critère, jusqu'à atteindre le significance level to stop : la p valeur de la variable ajoutée est plus grande qu'une p valeur déterminée. Dans le cas d'une backward élimination, on commence avec toutes les variables, et on supprime séquentiellement. Pour une selection stepwise, on recalcule à chaque étape si on peut supprimer une variable précédemment ajoutée. Nous allons comparer ces trois techniques. Pour la méthode forward selection, nous avons choisi un seuil d'entrée de 0.1. Pour la méthode backward élimination, nous avons choisi un seuil d'élimination de 0.15. Enfin, pour la méthode forward stepwise, les seuils d'entrée et d'élimination étaient de 0.1 et 0.15 respectivement. Dans les tables \ref{table:forward}, \ref{table:backward} et \ref{table:stepwise} en annexe, on peut constater que les 3 méthodes convergent vers la même solution: les variables heigth, stroke, bore et peakrpm sont éliminées, tandis que horsepower, length, fuel, wheelbase, aspiration et width sont conservées. Remarquons que ces méthodes proposent les mêmes 6 variables que le meilleur modèle selon le critère de Mallows.
 %préciser ce passage avec le livre
 %inclure les 3 tables en annexe
-
-
-
-
 
 \paragraph{Méthodes de type 3} Ce type de méthodes est utile lorsque le nombre de variables dans le modèle est très grand. Nous allons utiliser la méthode LASSO vue au cours, via SAS. Ici aussi, l'étape optimale retient les même 6 variables que précédemment (voir table \ref{table:lasso} en annexe).
 
@@ -218,13 +213,13 @@ Il y a trois principales hypothèses: l'homoscédasticité, la normalité des r�
 Une autre question pertinente est aussi de savoir s'il y a bien une linéarité de la fonction de régression. Les figures \ref{fig:diagnostics} et \ref{fig:regressors} présentent les différents graphes nous permettant de répondre à ces questions.
 \begin{figure}
 	\centering
-	\includegraphics[width=0.8\linewidth]{fitdiagnostics}
+	\includegraphics[width=0.7\linewidth]{fitdiagnostics}
 	\caption{Résumé des différents diagnostiques du modèle de régression}
 	\label{fig:diagnostics}
 \end{figure}
 \begin{figure}
 	\centering
-	\includegraphics[width=0.8\linewidth]{resbyregressors}
+	\includegraphics[width=0.7\linewidth]{resbyregressors}
 	\caption{Graphes des résidus par régresseurs}
 	\label{fig:regressors}
 \end{figure}
@@ -281,7 +276,7 @@ De plus, le test de Durbin-Watson(table \ref{table:dwcorrected}) pour l'autocorr
 
 \begin{figure}
 	\centering
-	\includegraphics[width=1\linewidth]{resbyregressorscorr}
+	\includegraphics[width=0.8\linewidth]{resbyregressorscorr}
 	\caption{Graphes des résidus par régresseurs, modèle corrigé}
 	\label{fig:regressorscorr}
 \end{figure}
@@ -291,16 +286,16 @@ De plus, le test de Durbin-Watson(table \ref{table:dwcorrected}) pour l'autocorr
 \begin{tabulary}{1\textwidth}{LLLLLL}\hline
 	\multicolumn{6}{c}{Analysis of Variance}\\\hline
 	Source &    DF &    Sum of {\newline} Squares &    Mean {\newline} Square &    F Value &    $Pr~>~F$\\\hline
-	Model &    26 &    71.45596 &    2.74831 &    50.93 &    $<$.0001\\\hline
-	Error &    172 &    9.28210 &    0.05397 &      &     \\\hline
+	Model &    26 &    71.45596 &    2.74831 &    50.93 &    $<$.0001\\
+	Error &    172 &    9.28210 &    0.05397 &      &     \\
 	Corrected Total &    198 &    80.73806 &      &      &     \\\hline
 \end{tabulary}
 
 \vspace{5mm}
 
-\begin{tabulary}{1\textwidth}{LLLL}\hline
-	Root MSE &    0.23231 &    R-Square &    0.8850\\\hline
-	Dependent Mean &    3.62184 &    Adj R-Sq &    0.8677\\\hline
+\begin{tabulary}{1\textwidth}{LL|LL}\hline
+	Root MSE &    0.23231 &    R-Square &    0.8850\\
+	Dependent Mean &    3.62184 &    Adj R-Sq &    0.8677\\
 	Coeff Var &    6.41400 &      &     \\\hline
 \end{tabulary}
 
@@ -309,32 +304,32 @@ De plus, le test de Durbin-Watson(table \ref{table:dwcorrected}) pour l'autocorr
 \begin{tabulary}{1\textwidth}{LLLLLL}\hline
 	\multicolumn{6}{c}{Parameter Estimates}\\\hline
 	Variable &     DF &    Parameter {\newline} Estimate &    Standard Error &    t~Value &    $Pr~>~|t|$\\\hline
-	Intercept  &    1 &    1.51831 &    1.16128 &    1.31 &    0.1928\\\hline
-	wheelbase      &    1 &    0.00149 &    0.00350 &    0.43 &    0.6703\\\hline
-	length       &    1 &    0.00757 &    0.00169 &    4.47 &    $<$.0001\\\hline
-	width      &    1 &    $-$0.01703 &    0.00848 &    $-$2.01 &    0.0462\\\hline
-	horsepower       &    1 &    0.00970 &    0.00099419 &    9.76 &    $<$.0001\\\hline
-	fueldummy       &    1 &    $-$0.25512 &    0.04049 &    $-$6.30 &    $<$.0001\\\hline
-	aspirationdummy &         1 &    0.05965 &    0.03127 &    1.91 &    0.0581\\\hline
-	makealfa{\textunderscore}rom &     1 &    0.19949 &    0.18123 &    1.10 &    0.2725\\\hline
-	makeaudi &       1 &    0.40580 &    0.12018 &    3.38 &    0.0009\\\hline
-	makebmw &        1 &    0.00791 &    0.11774 &    0.07 &    0.9465\\\hline
-	makechevrole &        1 &    $-$0.36691 &    0.17746 &    $-$2.07 &    0.0402\\\hline
-	makedodge &        1 &    0.03518 &    0.12475 &    0.28 &    0.7783\\\hline
-	makehonda &     1 &    0.04394 &    0.11959 &    0.37 &    0.7137\\\hline
-	makeisuzu &    1 &    $-$0.03369 &    0.15311 &    $-$0.22 &    0.8261\\\hline
-	makejaguar &        1 &    0.29561 &    0.16727 &    1.77 &    0.0790\\\hline
-	makemazda &        1 &    0.01375 &    0.10973 &    0.13 &    0.9004\\\hline
-	makemercedes &        1 &    0.75409 &    0.12097 &    6.23 &    $<$.0001\\\hline
-	makemercury &        1 &    $-$0.14793 &    0.24914 &    $-$0.59 &    0.5535\\\hline
-	makemitsubis &        1 &    0.00513 &    0.11195 &    0.05 &    0.9635\\\hline
-	makenissan &       1 &    $-$0.07021 &    0.10892 &    $-$0.64 &    0.5201\\\hline
-	makepeugot &       1 &    0.33728 &    0.10528 &    3.20 &    0.0016\\\hline
-	makeplymouth &      1 &    $-$0.02969 &    0.12848 &    $-$0.23 &    0.8175\\\hline
-	makeporsche &        1 &    $-$0.45421 &    0.18292 &    $-$2.48 &    0.0140\\\hline
-	makesaab &       1 &    $-$0.19943 &    0.13100 &    $-$1.52 &    0.1298\\\hline
-	makesubaru &       1 &    0.19383 &    0.11209 &    1.73 &    0.0856\\\hline
-	maketoyota &       1 &    $-$0.03065 &    0.09664 &    $-$0.32 &    0.7515\\\hline
+	Intercept  &    1 &    1.51831 &    1.16128 &    1.31 &    0.1928\\
+	wheelbase      &    1 &    0.00149 &    0.00350 &    0.43 &    0.6703\\
+	length       &    1 &    0.00757 &    0.00169 &    4.47 &    $<$.0001\\
+	width      &    1 &    $-$0.01703 &    0.00848 &    $-$2.01 &    0.0462\\
+	horsepower       &    1 &    0.00970 &    0.00099419 &    9.76 &    $<$.0001\\
+	fueldummy       &    1 &    $-$0.25512 &    0.04049 &    $-$6.30 &    $<$.0001\\
+	aspirationdummy &         1 &    0.05965 &    0.03127 &    1.91 &    0.0581\\
+	makealfa{\textunderscore}rom &     1 &    0.19949 &    0.18123 &    1.10 &    0.2725\\
+	makeaudi &       1 &    0.40580 &    0.12018 &    3.38 &    0.0009\\
+	makebmw &        1 &    0.00791 &    0.11774 &    0.07 &    0.9465\\
+	makechevrole &        1 &    $-$0.36691 &    0.17746 &    $-$2.07 &    0.0402\\
+	makedodge &        1 &    0.03518 &    0.12475 &    0.28 &    0.7783\\
+	makehonda &     1 &    0.04394 &    0.11959 &    0.37 &    0.7137\\
+	makeisuzu &    1 &    $-$0.03369 &    0.15311 &    $-$0.22 &    0.8261\\
+	makejaguar &        1 &    0.29561 &    0.16727 &    1.77 &    0.0790\\
+	makemazda &        1 &    0.01375 &    0.10973 &    0.13 &    0.9004\\
+	makemercedes &        1 &    0.75409 &    0.12097 &    6.23 &    $<$.0001\\
+	makemercury &        1 &    $-$0.14793 &    0.24914 &    $-$0.59 &    0.5535\\
+	makemitsubis &        1 &    0.00513 &    0.11195 &    0.05 &    0.9635\\
+	makenissan &       1 &    $-$0.07021 &    0.10892 &    $-$0.64 &    0.5201\\
+	makepeugot &       1 &    0.33728 &    0.10528 &    3.20 &    0.0016\\
+	makeplymouth &      1 &    $-$0.02969 &    0.12848 &    $-$0.23 &    0.8175\\
+	makeporsche &        1 &    $-$0.45421 &    0.18292 &    $-$2.48 &    0.0140\\
+	makesaab &       1 &    $-$0.19943 &    0.13100 &    $-$1.52 &    0.1298\\
+	makesubaru &       1 &    0.19383 &    0.11209 &    1.73 &    0.0856\\
+	maketoyota &       1 &    $-$0.03065 &    0.09664 &    $-$0.32 &    0.7515\\
 	makevolkswag &        1 &    0.06063 &    0.11148 &    0.54 &    0.5872\\\hline
 \end{tabulary}
 	\caption{Modèle final après corrections}
@@ -364,7 +359,7 @@ Globalement,  la variable horsepower explique le plus la consommation de carbura
 Nous avions codé, manuellement, des codes de contrastes pour les deux variables catégorielles.
 Ainsi, pour la variable fuel nous avons attribué la valeur "-1" si le carburant était l'essence, et "1" si le carburant était le diesel. Pour la variable aspiration, nous avons attribué la valeur "-1" si l'arrivée d'air était standard, et "1" s'il y avait une aspiration turbo.
 Sur le tableau \ref{table:Modfinal} on peut constater que seul la variable catégorielle correspondant au type de carburant est significative. Comme nous avons utilisé des codes de contrastes, il est facile d'interpréter les coefficients $\beta$ estimés. Comme ce coefficient est négatif, cela indique que lorsque le carburant est diesel, le moteur consomme moins de carburant. Inversement pour l'essence. L'aspiration est à la limite de la significativité. Nous voyons qu'une aspiration turbo augmentera la consommation, et une aspiration standard la diminuera. 
-En ajoutant un terme d'interaction au modèle (tableau non inclu pour des raison d'économie de pages) nous remarquons que le terme d'interaction n'est pas significatif (p=0.32). De plus, en ajoutant ce terme d'interaction, la variable aspiration n'est plus significative (p=0.24). La variable fuel reste significative (p<0.000). Comme ce terme d'interaction n'est pas significatif, nous allons le retirer du modèle. Ceci est logique, en se référant au graphe \ref{fig:meanauto}: les droites sont quasiment parallèles, indiquant, de manière graphique, qu'il n'y a pas d'interaction entre les deux variables.
+En ajoutant un terme d'interaction au modèle (tableau non inclu pour des raison d'économie de pages) nous remarquons que le terme d'interaction n'est pas significatif (p=0.32). De plus, en ajoutant ce terme d'interaction, la variable aspiration n'est plus significative (p=0.24). La variable fuel reste significative ($p<0.000$). Comme ce terme d'interaction n'est pas significatif, nous allons le retirer du modèle. Ceci est logique, en se référant au graphe \ref{fig:meanauto}: les droites sont quasiment parallèles, indiquant, de manière graphique, qu'il n'y a pas d'interaction entre les deux variables.
 
 \section{Prédiction}
 
@@ -423,6 +418,7 @@ peakrpm &    $-$0.35 &    $-$0.28 &    $-$0.22 &    $-$0.28 &    $-$0.27 &    $-
 		\end{table}
 \FloatBarrier
 \section{Sorties de la sélection du modèle}
+\label{annex:selmodel}
 \begin{table}[h]
 	\small
 	\begin{tabulary}{1\textwidth}{LlLJ}
@@ -559,4 +555,230 @@ peakrpm &    $-$0.35 &    $-$0.28 &    $-$0.22 &    $-$0.28 &    $-$0.27 &    $-
 	\end{subfigure}
 	\caption{Graphes des différentes mesures de valeurs aberrantes et influentes, par observation}
 \end{figure}
+
+\section{Code SAS}
+
+\begin{lstlisting}
+%let path=/folders/myfolders/Mod_lin;
+data modlin.data2;
+missing na;
+infile '/folders/myfolders/Mod_lin/imports-85.data' dsd truncover;
+input symboling
+normalizedlosses
+make :$
+fueltype :$
+aspiration :$
+numdoors :$
+bodystyle :$
+drivewheels :$
+enginelocation :$
+wheelbase
+length
+width
+height
+curbweight
+enginetype :$
+numcylinders :$
+enginesize 
+fuelsystem :$
+bore
+stroke
+compressionratio
+horsepower
+peakrpm
+citympg
+highwaympg
+price;
+drop symboling normalizedlosses numdoors bodystyle
+drivewheels enginelocation numcylinders fuelsystem 
+price enginetype citympg;
+run;
+
+/*conversion variables*/
+data modlin.data(drop=highwaykml);
+set modlin.data2;
+highwaykml = highwaympg *0.425170068;
+highwaylkm100 = round(100/highwaykml,0.01);
+wheelbase=wheelbase*2.54;
+length=length*2.54;
+width=width*2.54;
+height=height*2.54;
+bore=bore*2.54;
+stroke=stroke*2.54;
+enginesize=round(enginesize*0.0163871,0.01);
+curbweight=round(curbweight*0.453592,0.01);
+if fueltype='diesel' then fueldummy=1;
+else if fueltype='gas' then fueldummy=-1;
+if aspiration='std' then aspirationdummy=-1;
+else if aspiration ='turbo' then aspirationdummy=1;
+aspixfuel = aspirationdummy*fueldummy;
+if cmiss(of _all_) =0;
+run;
+
+proc export data=modlin.data
+outfile = "&path/automobileclean.csv"
+dbms=csv replace;
+run;
+
+
+ods tagsets.tablesonlylatex file="&path/premiereregression.tex" 
+(notop nobot);
+proc reg data=modlin.data;
+model highwaylkm100 = wheelbase length width height 
+curbweight enginesize bore stroke
+horsepower peakrpm  fueldummy aspirationdummy   /vif;
+run;
+ods tagsets.tablesonlylatex close;
+/*verification via proc corr */
+proc corr data=modlin.data outp=resultats nosimple;
+var wheelbase length width height curbweight 
+enginesize bore stroke
+horsepower peakrpm;
+run;
+
+*print;
+ods tagsets.tablesonlylatex file="&path/corr.tex" (notop nobot);
+proc print data=resultats;
+format _numeric_ 5.2;
+run;
+ods tagsets.tablesonlylatex close;
+
+ods tagsets.tablesonlylatex file="&path/regsuppr.tex" (notop nobot);
+proc reg data=modlin.data;
+model highwaylkm100 = wheelbase length width height bore stroke
+horsepower peakrpm fueldummy aspirationdummy /vif;
+run;
+ods tagsets.tablesonlylatex close;
+
+
+ods tagsets.tablesonlylatex file="&path/regmallows.tex" 
+(notop nobot);
+proc reg data=modlin.data;
+model highwaylkm100 = wheelbase length width 
+height bore stroke horsepower
+peakrpm fueldummy aspirationdummy /vif selection=cp best=5;
+run;
+ods tagsets.tablesonlylatex close;
+/*selection via adj rsq */
+ods tagsets.tablesonlylatex file="&path/regadjsqr.tex" 
+(notop nobot);
+proc reg data=modlin.data;
+model highwaylkm100 = wheelbase length width 
+height bore stroke horsepower
+peakrpm fueldummy aspirationdummy /vif selection=adjrsq best=5;
+run;
+ods tagsets.tablesonlylatex close;
+
+/*selection via forward selection */
+ods tagsets.tablesonlylatex file="&path/regforwarsel.tex" 
+(notop nobot);
+proc reg data=modlin.data;
+model highwaylkm100 = wheelbase length 
+width height bore stroke horsepower
+peakrpm fueldummy aspirationdummy /vif selection=forward sle=0.10;
+run;
+ods tagsets.tablesonlylatex close;
+
+/*stepwise*/
+ods tagsets.tablesonlylatex file="&path/regstepwisesel.tex" 
+(notop nobot);
+proc reg data=modlin.data;
+model highwaylkm100 = wheelbase length width 
+height bore stroke horsepower
+peakrpm fueldummy aspirationdummy /vif selection=stepwise 
+sle=0.1 sls=0.15;
+run;
+ods tagsets.tablesonlylatex close;
+
+/*selection via backward selection */
+ods tagsets.tablesonlylatex file="&path/regbackwardsel.tex" 
+(notop nobot);
+proc reg data=modlin.data;
+model highwaylkm100 = wheelbase length width height bore 
+stroke horsepower
+peakrpm fueldummy aspirationdummy /vif selection=backward sls=0.15;
+run;
+ods tagsets.tablesonlylatex close;
+
+ods tagsets.tablesonlylatex file="&path/lasso.tex" 
+(notop nobot);
+proc glmselect data=modlin.data plots=all;
+model highwaylkm100 = wheelbase length 
+width height bore stroke horsepower
+peakrpm fueldummy aspirationdummy / 
+selection=lasso (stop=none choose=bic);
+run;
+ods tagsets.tablesonlylatex close;
+
+/*modele final*/
+ods tagsets.tablesonlylatex file="&path/regfinale.tex" 
+(notop nobot);
+proc reg data=modlin.data plots=all;
+model highwaylkm100 = wheelbase length width horsepower
+fueldummy aspirationdummy aspixfuel / 
+white dwprob r vif influence;
+output out=modlin.resulta2 residual=residu 
+h=leverage student=resstu
+rstudent=resstudel dffits=dfits cookd=Dcook P=predicted;
+run;
+ods tagsets.tablesonlylatex close;
+
+/*box cox*/
+proc transreg data=modlin.data;
+model Boxcox(highwaylkm100)=identity(wheelbase length 
+width horsepower wheelbase length width horsepower
+fueldummy aspirationdummy aspixfuel)
+class(make);
+*output out=modlin.datab;
+run;
+quit;
+proc contents data=modlin.datab;
+run;
+
+/*clean*/
+data modlin.datacb;
+set modlin.datab;
+drop tintercept--tmakevolkswag _type_ _name_ 
+intercept wheelbase2--horsepower2 ;
+aspixfuel = fueldummy*aspirationdummy;
+run;
+
+
+ods tagsets.tablesonlylatex file="&path/regfinalecorrige.tex" 
+(notop nobot);
+proc reg data=modlin.datacb;
+model thighwaylkm100 = wheelbase length width horsepower
+fueldummy aspirationdummy aspixfuel makealfa_rom makeaudi
+ makebmw makechevrole
+makedodge makehonda makeisuzu makejaguar makemazda makemercedes
+makemercury makemitsubis makenissan makepeugot makeplymouth
+makeporsche makesaab makesubaru maketoyota makevolkswag
+/ partialr2/* white dwprob*/;
+*output out=modlin.resulta2 residual=residu h=leverage student=resstu
+rstudent=resstudel dffits=dfits cookd=Dcook P=predicted;	    		 
+run;
+ods tagsets.tablesonlylatex close;
+
+/*diagnostics*/
+data modlin.resulta3;
+set modlin.resulta2;
+obs= _n_;
+run;
+proc sgplot data=modlin.resulta3;
+*scatter y=leverage x=obs;
+scatter y=resstudel x=obs;
+run;
+/*verification exclusion observations */
+data modlin.resulta4;
+set modlin.resulta3;
+where leverage <0.27;
+where also resstudel between -1.960 and 1.960;
+run;
+
+proc export data=modlin.datacb
+outfile = "&path/automobilecleanboxcox.csv"
+dbms=csv replace;
+run;
+
+\end{lstlisting}
 \end{document}

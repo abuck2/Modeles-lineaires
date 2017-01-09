@@ -143,32 +143,65 @@ rstudent=resstudel dffits=dfits cookd=Dcook P=predicted;
 run;
 
 ods tagsets.tablesonlylatex close;
-/*modèle incluant les variables des constructeurs */
-ods tagsets.tablesonlylatex file="&path/regfinalecorrige.tex" (notop nobot);
-proc reg data=modlin.datab;
-	model thighwaylkm100 = wheelbase length width horsepower
-			   fueldummy aspirationdummy tmakealfa_rom tmakeaudi tmakebmw tmakechevrole
-			   tmakedodge tmakehonda tmakeisuzu tmakejaguar tmakemazda tmakemercedes
-			   tmakemercury tmakemitsubis tmakenissan tmakepeugot tmakeplymouth
-			   tmakeporsche tmakesaab tmakesubaru tmaketoyota tmakevolkswag
-			    / white dwprob;
-			 
-run;
-ods tagsets.tablesonlylatex close;
+
 /*box cox*/
 proc transreg data=modlin.data;
 	model Boxcox(highwaylkm100)=identity(wheelbase length width horsepower wheelbase length width horsepower
-			   fueldummy aspirationdummy)
+			   fueldummy aspirationdummy aspixfuel)
 	class(make);
-	output out=modlin.datab;
+	*output out=modlin.datab;
 	run;
 	quit;
 proc contents data=modlin.datab;
 run;
+
+
+/*clean*/
 data modlin.datacb;
 	set modlin.datab;
-	drop tintercept--tmakevolkswag _type_ _name_ intercept;
+	drop tintercept--tmakevolkswag _type_ _name_ intercept wheelbase2--horsepower2 ;
+	aspixfuel = fueldummy*aspirationdummy;
 run;
+
+/*modèle incluant les variables des constructeurs */
+ods tagsets.tablesonlylatex file="&path/regfinalecorrige.tex" (notop nobot);
+proc reg data=modlin.datacb;
+	model thighwaylkm100 = wheelbase length width horsepower
+			   fueldummy aspirationdummy aspixfuel makealfa_rom makeaudi makebmw makechevrole
+			   makedodge makehonda makeisuzu makejaguar makemazda makemercedes
+			   makemercury makemitsubis makenissan makepeugot makeplymouth
+			   makeporsche makesaab makesubaru maketoyota makevolkswag
+			    / partialr2/* white dwprob*/;
+	*output out=modlin.resulta2 residual=residu h=leverage student=resstu
+rstudent=resstudel dffits=dfits cookd=Dcook P=predicted;	    		 
+run;
+ods tagsets.tablesonlylatex close;
+
+/*plot*/
+data modlin.resulta3;
+	set modlin.resulta2;
+obs= _n_;
+run;
+proc sgplot data=modlin.resulta3;
+*scatter y=leverage x=obs;
+scatter y=resstudel x=obs;
+run;
+
+/*tri leverage etc... */
+data modlin.resulta4;
+	set modlin.resulta3;
+	where leverage <0.27;
+	where also resstudel between -1.960 and 1.960;
+run;
+proc reg data=modlin.resulta4;
+	model thighwaylkm100 = wheelbase length width horsepower
+			   fueldummy aspirationdummy /*makealfa_rom*/ makeaudi makebmw /*makechevrole*/
+			   makedodge makehonda makeisuzu /*makejaguar*/ makemazda makemercedes
+			   /*makemercury*/ makemitsubis makenissan makepeugot makeplymouth
+			   makeporsche makesaab makesubaru maketoyota makevolkswag
+			    / white dwprob r vif influence;    		 
+run;
+
 proc export data=modlin.datacb
 	outfile = "&path/automobilecleanboxcox.csv"
 	dbms=csv replace;

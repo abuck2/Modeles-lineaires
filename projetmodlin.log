@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.11.22)  9 JAN 2017 08:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.11.22)  9 JAN 2017 10:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -524,43 +524,80 @@ Package caption Info: rotating package is loaded.
 )
 \c@subfigure=\count108
 \c@subtable=\count109
+)
+(/usr/share/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count110
+\lst@gtempboxa=\box29
+\lst@token=\toks25
+\lst@length=\count111
+\lst@currlwidth=\dimen130
+\lst@column=\count112
+\lst@pos=\count113
+\lst@lostspace=\dimen131
+\lst@width=\dimen132
+\lst@newlines=\count114
+\lst@lineno=\count115
+\lst@maxwidth=\dimen133
+
+(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count116
+\lst@skipnumbers=\count117
+\lst@framebox=\box30
+)
+(/usr/share/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+(/usr/share/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2015/06/04 1.6 listings language file
+)
+(/usr/share/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2015/06/04 1.6 listings language file
+)
+(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 ) (./projetmodlin.aux)
 \openout1 = `projetmodlin.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Info: Redefining \degres on input line 17.
-LaTeX Info: Redefining \dots on input line 17.
-LaTeX Info: Redefining \up on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Info: Redefining \degres on input line 19.
+LaTeX Info: Redefining \dots on input line 19.
+LaTeX Info: Redefining \up on input line 19.
 
 
 Package frenchb.ldf Warning: OT1 encoding should not be used for French.
 (frenchb.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(frenchb.ldf)                of your document, on input line 17.
+(frenchb.ldf)                of your document, on input line 19.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count110
-\scratchdimen=\dimen130
-\scratchbox=\box29
-\nofMPsegments=\count111
-\nofMParguments=\count112
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count113
-\MPscratchDim=\dimen131
-\MPnumerator=\count114
-\makeMPintoPDFobject=\count115
-\everyMPtoPDFconversion=\toks26
+\scratchcounter=\count118
+\scratchdimen=\dimen134
+\scratchbox=\box31
+\nofMPsegments=\count119
+\nofMParguments=\count120
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count121
+\MPscratchDim=\dimen135
+\MPnumerator=\count122
+\makeMPintoPDFobject=\count123
+\everyMPtoPDFconversion=\toks27
 ) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -611,398 +648,401 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 18.
+\c@lstlisting=\count124
+LaTeX Font Info:    Try loading font information for U+msa on input line 21.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 18.
+LaTeX Font Info:    Try loading font information for U+msb on input line 21.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (19.11758pt too wide) in paragraph at lines 54--72
+Overfull \hbox (19.11758pt too wide) in paragraph at lines 53--71
  [][] 
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 72.
+(Font)              using `OT1/cmr/bx/n' instead on input line 71.
 
 <meanauto.png, id=13, 673.51625pt x 675.52374pt>
 File: meanauto.png Graphic file (type png)
  <use meanauto.png>
-Package pdftex.def Info: meanauto.png used on input line 109.
+Package pdftex.def Info: meanauto.png used on input line 108.
 (pdftex.def)             Requested size: 288.0011pt x 288.86156pt.
  [2]
-[3 <./meanauto.png>]
-Overfull \hbox (4.1667pt too wide) in paragraph at lines 143--143
+[3 <./meanauto.png>] [4]
+Overfull \hbox (4.1667pt too wide) in paragraph at lines 142--142
  []\OT1/cmr/m/n/10 DF|
  []
 
 
-Overfull \hbox (10.49858pt too wide) in paragraph at lines 143--143
+Overfull \hbox (10.49858pt too wide) in paragraph at lines 142--142
  []$\OML/cmm/m/it/10 Pr  >  \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 t\OMS/cmsy/m/n/1
 0 j$|
  []
 
 
-Overfull \hbox (3.534pt too wide) in paragraph at lines 143--143
+Overfull \hbox (3.534pt too wide) in paragraph at lines 142--142
  []$\OMS/cmsy/m/n/10 ^^@$\OT1/cmr/m/n/10 0.95|
  []
 
 
-Overfull \hbox (3.534pt too wide) in paragraph at lines 143--143
+Overfull \hbox (3.534pt too wide) in paragraph at lines 142--142
  []$\OMS/cmsy/m/n/10 ^^@$\OT1/cmr/m/n/10 0.59|
  []
 
 
-Overfull \hbox (1.24268pt too wide) in paragraph at lines 143--143
+Overfull \hbox (1.24268pt too wide) in paragraph at lines 142--142
  []\OT1/cmr/m/n/10 0.00067915|
  []
 
 
-Overfull \hbox (1.51149pt too wide) in paragraph at lines 143--143
+Overfull \hbox (1.51149pt too wide) in paragraph at lines 142--142
  []$\OML/cmm/m/it/10 <$\OT1/cmr/m/n/10 .0001|
  []
 
 
-Overfull \hbox (1.51149pt too wide) in paragraph at lines 143--143
+Overfull \hbox (1.51149pt too wide) in paragraph at lines 142--142
  []$\OML/cmm/m/it/10 <$\OT1/cmr/m/n/10 .0001|
  []
 
 
-Overfull \hbox (3.534pt too wide) in paragraph at lines 143--143
+Overfull \hbox (3.534pt too wide) in paragraph at lines 142--142
  []$\OMS/cmsy/m/n/10 ^^@$\OT1/cmr/m/n/10 2.16|
  []
 
 
-Overfull \hbox (3.534pt too wide) in paragraph at lines 143--143
+Overfull \hbox (3.534pt too wide) in paragraph at lines 142--142
  []$\OMS/cmsy/m/n/10 ^^@$\OT1/cmr/m/n/10 3.76|
  []
 
 
-Overfull \hbox (3.534pt too wide) in paragraph at lines 143--143
+Overfull \hbox (3.534pt too wide) in paragraph at lines 142--142
  []$\OMS/cmsy/m/n/10 ^^@$\OT1/cmr/m/n/10 2.44|
  []
 
 
-Overfull \hbox (1.24268pt too wide) in paragraph at lines 143--143
+Overfull \hbox (1.24268pt too wide) in paragraph at lines 142--142
  []\OT1/cmr/m/n/10 0.00013387|
  []
 
 
-Overfull \hbox (8.53401pt too wide) in paragraph at lines 143--143
+Overfull \hbox (8.53401pt too wide) in paragraph at lines 142--142
  []$\OMS/cmsy/m/n/10 ^^@$\OT1/cmr/m/n/10 10.88|
  []
 
 
-Overfull \hbox (1.51149pt too wide) in paragraph at lines 143--143
+Overfull \hbox (1.51149pt too wide) in paragraph at lines 142--142
  []$\OML/cmm/m/it/10 <$\OT1/cmr/m/n/10 .0001|
  []
 
 
-Overfull \hbox (1.51149pt too wide) in paragraph at lines 143--143
+Overfull \hbox (1.51149pt too wide) in paragraph at lines 142--142
  []$\OML/cmm/m/it/10 <$\OT1/cmr/m/n/10 .0001|
  []
 
-[4] [5] <fitdiagnostics.png, id=27, 481.8pt x 481.8pt>
+[5
+
+] [6] <fitdiagnostics.png, id=30, 481.8pt x 481.8pt>
 File: fitdiagnostics.png Graphic file (type png)
 
 <use fitdiagnostics.png>
-Package pdftex.def Info: fitdiagnostics.png used on input line 221.
-(pdftex.def)             Requested size: 288.0011pt x 288.00888pt.
- <resbyregressors.png, id=28, 481.8pt x 361.35pt>
+Package pdftex.def Info: fitdiagnostics.png used on input line 216.
+(pdftex.def)             Requested size: 251.9989pt x 251.99306pt.
+ <resbyregressors.png, id=31, 481.8pt x 361.35pt>
 File: resbyregressors.png Graphic file (type png)
 
 <use resbyregressors.png>
-Package pdftex.def Info: resbyregressors.png used on input line 227.
-(pdftex.def)             Requested size: 288.0011pt x 216.00667pt.
- [6] [7] [8 <./fitdiagnostics.png (PNG copy)> <./resbyregressors.png (PNG copy)
+Package pdftex.def Info: resbyregressors.png used on input line 222.
+(pdftex.def)             Requested size: 251.9989pt x 188.9948pt.
+ [7] [8 <./fitdiagnostics.png (PNG copy)>] [9 <./resbyregressors.png (PNG copy)
 >]
-Overfull \hbox (9.44972pt too wide) in paragraph at lines 257--258
+Overfull \hbox (9.44972pt too wide) in paragraph at lines 252--253
 \OT1/cmr/m/n/10.95 certes faible, mais nous avons voulu la cor-ri-ger. Comme su
 gg^^Ser^^Se pr^^Sec^^Sedemment,
  []
 
-[9]
-Overfull \hbox (10.56671pt too wide) in paragraph at lines 269--270
+
+Overfull \hbox (10.56671pt too wide) in paragraph at lines 264--265
 \OT1/cmr/m/n/10.95 per-met de d^^Setecter la pr^^Sesence d'ob-ser-va-tions in-f
 luentes sur les va-leurs pr^^Sedites,
  []
 
-[10] <resbyregressorscorr.png, id=48, 481.8pt x 361.35pt>
+[10] <resbyregressorscorr.png, id=47, 481.8pt x 361.35pt>
 File: resbyregressorscorr.png Graphic file (type png)
 
 <use resbyregressorscorr.png>
-Package pdftex.def Info: resbyregressorscorr.png used on input line 284.
-(pdftex.def)             Requested size: 360.0pt x 270.00833pt.
- [11 <./resbyregressorscorr.png (PNG copy)>]
-[12] [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 382--384
+Package pdftex.def Info: resbyregressorscorr.png used on input line 279.
+(pdftex.def)             Requested size: 288.0011pt x 216.00667pt.
+ [11] [12] [13 <./resbyregressorscorr.png (PNG copy)>] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 377--379
 
  []
 
-[15]
-Overfull \hbox (8.02155pt too wide) in paragraph at lines 420--420
+[15] [16]
+Overfull \hbox (8.02155pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 length|
  []
 
 
-Overfull \hbox (7.05821pt too wide) in paragraph at lines 420--420
+Overfull \hbox (7.05821pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 width|
  []
 
 
-Overfull \hbox (7.9397pt too wide) in paragraph at lines 420--420
+Overfull \hbox (7.9397pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 height|
  []
 
 
-Overfull \hbox (2.10675pt too wide) in paragraph at lines 420--420
+Overfull \hbox (2.10675pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 bore|
  []
 
 
-Overfull \hbox (7.71292pt too wide) in paragraph at lines 420--420
+Overfull \hbox (7.71292pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 stroke|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.80|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.49|
  []
 
 
-Overfull \hbox (0.57532pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.17|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.84|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.61|
  []
 
 
-Overfull \hbox (0.57532pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.12|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 1.00|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.56|
  []
 
 
-Overfull \hbox (0.57532pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.18|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.29|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.18|
  []
 
 
-Overfull \hbox (7.18652pt too wide) in paragraph at lines 420--420
+Overfull \hbox (7.18652pt too wide) in paragraph at lines 415--415
  []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.05|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.87|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.65|
  []
 
 
-Overfull \hbox (0.57532pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.17|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.75|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.59|
  []
 
 
-Overfull \hbox (0.57532pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.21|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.56|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 1.00|
  []
 
 
-Overfull \hbox (7.18652pt too wide) in paragraph at lines 420--420
+Overfull \hbox (7.18652pt too wide) in paragraph at lines 415--415
  []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.07|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.18|
  []
 
 
-Overfull \hbox (6.75912pt too wide) in paragraph at lines 420--420
+Overfull \hbox (6.75912pt too wide) in paragraph at lines 415--415
  []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.05|
  []
 
 
-Overfull \hbox (7.53044pt too wide) in paragraph at lines 420--420
+Overfull \hbox (7.53044pt too wide) in paragraph at lines 415--415
  []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.07|
  []
 
 
-Overfull \hbox (0.57532pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 1.00|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.64|
  []
 
 
-Overfull \hbox (6.75912pt too wide) in paragraph at lines 420--420
+Overfull \hbox (6.75912pt too wide) in paragraph at lines 415--415
  []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.11|
  []
 
 
-Overfull \hbox (0.91924pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.91924pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.58|
  []
 
 
-Overfull \hbox (0.57532pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.57532pt too wide) in paragraph at lines 415--415
  []\OT1/cmr/m/n/8 0.09|
  []
 
 
-Overfull \hbox (6.60486pt too wide) in paragraph at lines 420--420
+Overfull \hbox (6.60486pt too wide) in paragraph at lines 415--415
  []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.28|
  []
 
 
-Overfull \hbox (7.53044pt too wide) in paragraph at lines 420--420
+Overfull \hbox (7.53044pt too wide) in paragraph at lines 415--415
  []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.22|
  []
 
 
-Overfull \hbox (6.75912pt too wide) in paragraph at lines 420--420
+Overfull \hbox (6.75912pt too wide) in paragraph at lines 415--415
  []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.28|
  []
 
 
-Overfull \hbox (7.53044pt too wide) in paragraph at lines 420--420
+Overfull \hbox (7.53044pt too wide) in paragraph at lines 415--415
  []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.26|
  []
 
 
-Overfull \hbox (7.18652pt too wide) in paragraph at lines 420--420
+Overfull \hbox (7.18652pt too wide) in paragraph at lines 415--415
  []$\OMS/cmsy/m/n/8 ^^@$\OT1/cmr/m/n/8 0.07|
  []
 
 
-Overfull \hbox (5.18813pt too wide) in paragraph at lines 439--439
+Overfull \hbox (5.18813pt too wide) in paragraph at lines 435--435
 \OT1/cmr/m/n/10 Square|  
  []
 
 
-Overfull \hbox (3.21593pt too wide) in paragraph at lines 439--439
+Overfull \hbox (3.21593pt too wide) in paragraph at lines 435--435
 []\OT1/cmr/m/n/10 0.8152|  
  []
 
 
-Overfull \hbox (3.21593pt too wide) in paragraph at lines 439--439
+Overfull \hbox (3.21593pt too wide) in paragraph at lines 435--435
 []\OT1/cmr/m/n/10 0.8168|  
  []
 
 
-Underfull \hbox (badness 1527) in paragraph at lines 439--439
+Underfull \hbox (badness 1527) in paragraph at lines 435--435
 []\OT1/cmr/m/n/10 wheel-base length width hor-se-po-wer pea-krpm
  []
 
 
-Overfull \hbox (3.21593pt too wide) in paragraph at lines 439--439
+Overfull \hbox (3.21593pt too wide) in paragraph at lines 435--435
 []\OT1/cmr/m/n/10 0.8184|  
  []
 
 
-Overfull \hbox (3.21593pt too wide) in paragraph at lines 439--439
+Overfull \hbox (3.21593pt too wide) in paragraph at lines 435--435
 []\OT1/cmr/m/n/10 0.8122|  
  []
 
 
-Overfull \hbox (3.21593pt too wide) in paragraph at lines 439--439
+Overfull \hbox (3.21593pt too wide) in paragraph at lines 435--435
 []\OT1/cmr/m/n/10 0.8159|  
  []
 
 
-Overfull \hbox (9.10014pt too wide) in paragraph at lines 457--457
+Overfull \hbox (9.10014pt too wide) in paragraph at lines 453--453
 \OT1/cmr/m/n/10 Square|  
  []
 
 
-Overfull \hbox (7.12794pt too wide) in paragraph at lines 457--457
+Overfull \hbox (7.12794pt too wide) in paragraph at lines 453--453
 []\OT1/cmr/m/n/10 0.8184|  
  []
 
 
-Overfull \hbox (7.12794pt too wide) in paragraph at lines 457--457
+Overfull \hbox (7.12794pt too wide) in paragraph at lines 453--453
 []\OT1/cmr/m/n/10 0.8194|  
  []
 
 
-Overfull \hbox (7.12794pt too wide) in paragraph at lines 457--457
+Overfull \hbox (7.12794pt too wide) in paragraph at lines 453--453
 []\OT1/cmr/m/n/10 0.8199|  
  []
 
 
-Overfull \hbox (7.12794pt too wide) in paragraph at lines 457--457
+Overfull \hbox (7.12794pt too wide) in paragraph at lines 453--453
 []\OT1/cmr/m/n/10 0.8168|  
  []
 
 
-Overfull \hbox (7.12794pt too wide) in paragraph at lines 457--457
+Overfull \hbox (7.12794pt too wide) in paragraph at lines 453--453
 []\OT1/cmr/m/n/10 0.8187|  
  []
 
@@ -1010,12 +1050,12 @@ Overfull \hbox (7.12794pt too wide) in paragraph at lines 457--457
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (3.31615pt too wide) in paragraph at lines 474--474
+Overfull \hbox (3.31615pt too wide) in paragraph at lines 470--470
 []\OT1/cmr/m/n/8 Step|  
  []
 
 
-Overfull \hbox (4.97318pt too wide) in paragraph at lines 474--474
+Overfull \hbox (4.97318pt too wide) in paragraph at lines 470--470
 []$\OML/cmm/m/it/8 Pr  >  F$|  
  []
 
@@ -1023,32 +1063,32 @@ Overfull \hbox (4.97318pt too wide) in paragraph at lines 474--474
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (2.96283pt too wide) in paragraph at lines 491--491
+Overfull \hbox (2.96283pt too wide) in paragraph at lines 487--487
 []\OT1/cmr/m/n/8 Step|  
  []
 
 
-Overfull \hbox (4.24203pt too wide) in paragraph at lines 491--491
+Overfull \hbox (4.24203pt too wide) in paragraph at lines 487--487
 []$\OML/cmm/m/it/8 Pr  >  F$|  
  []
 
 
-Overfull \hbox (4.2326pt too wide) in paragraph at lines 491--491
+Overfull \hbox (4.2326pt too wide) in paragraph at lines 487--487
 []\OT1/cmr/m/n/8 9.5281|  
  []
 
 
-Overfull \hbox (4.2326pt too wide) in paragraph at lines 491--491
+Overfull \hbox (4.2326pt too wide) in paragraph at lines 487--487
 []\OT1/cmr/m/n/8 8.5198|  
  []
 
 
-Overfull \hbox (4.2326pt too wide) in paragraph at lines 491--491
+Overfull \hbox (4.2326pt too wide) in paragraph at lines 487--487
 []\OT1/cmr/m/n/8 8.2218|  
  []
 
 
-Overfull \hbox (4.2326pt too wide) in paragraph at lines 491--491
+Overfull \hbox (4.2326pt too wide) in paragraph at lines 487--487
 []\OT1/cmr/m/n/8 7.8733|  
  []
 
@@ -1056,7 +1096,7 @@ Overfull \hbox (4.2326pt too wide) in paragraph at lines 491--491
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (6.52802pt too wide) in paragraph at lines 509--509
+Overfull \hbox (6.52802pt too wide) in paragraph at lines 505--505
 []\OT1/cmr/m/n/8 Step|  
  []
 
@@ -1065,48 +1105,189 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <6.49994> not available
-(Font)              size <6> substituted on input line 533.
+(Font)              size <6> substituted on input line 529.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16] [17] [18] <leverage.png, id=76, 481.8pt x 361.35pt>
+[17] [18] [19] <leverage.png, id=80, 481.8pt x 361.35pt>
 File: leverage.png Graphic file (type png)
  <use leverage.png>
-Package pdftex.def Info: leverage.png used on input line 541.
+Package pdftex.def Info: leverage.png used on input line 537.
 (pdftex.def)             Requested size: 180.0pt x 134.99864pt.
 
-<delstudent.png, id=77, 481.8pt x 361.35pt>
+<delstudent.png, id=81, 481.8pt x 361.35pt>
 File: delstudent.png Graphic file (type png)
  <use delstudent.png>
-Package pdftex.def Info: delstudent.png used on input line 546.
+Package pdftex.def Info: delstudent.png used on input line 542.
 (pdftex.def)             Requested size: 180.0pt x 134.99864pt.
 
-<dfits.png, id=78, 481.8pt x 361.35pt>
+<dfits.png, id=82, 481.8pt x 361.35pt>
 File: dfits.png Graphic file (type png)
  <use dfits.png>
-Package pdftex.def Info: dfits.png used on input line 551.
+Package pdftex.def Info: dfits.png used on input line 547.
 (pdftex.def)             Requested size: 180.0pt x 134.99864pt.
 
-<cookd.png, id=79, 481.8pt x 361.35pt>
+<cookd.png, id=83, 481.8pt x 361.35pt>
 File: cookd.png Graphic file (type png)
  <use cookd.png>
-Package pdftex.def Info: cookd.png used on input line 556.
+Package pdftex.def Info: cookd.png used on input line 552.
 (pdftex.def)             Requested size: 180.0pt x 134.99864pt.
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 539--560
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 535--556
 []$[]$ $[]$
  []
 
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 539--560
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 535--556
 []$ $[]$ 
  []
 
-[19
+
+Overfull \hbox (73.62451pt too wide) in paragraph at lines 565--566
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[20
 
  <./leverage.png (PNG copy)> <./delstudent.png (PNG copy)> <./dfits.png (PNG co
-py)> <./cookd.png (PNG copy)>] (./projetmodlin.aux)
+py)> <./cookd.png (PNG copy)>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 597.
+
+
+(/usr/share/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 597.
+ [21]
+Overfull \hbox (53.9143pt too wide) in paragraph at lines 624--625
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (60.48438pt too wide) in paragraph at lines 640--641
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (86.76465pt too wide) in paragraph at lines 646--647
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (53.9143pt too wide) in paragraph at lines 648--649
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1.35376pt too wide) in paragraph at lines 654--655
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (27.63403pt too wide) in paragraph at lines 659--660
+[][][][][][][][][][][][][][][][][] 
+ []
+
+[22]
+Overfull \hbox (53.9143pt too wide) in paragraph at lines 668--669
+[][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.4939pt too wide) in paragraph at lines 673--674
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (73.62451pt too wide) in paragraph at lines 678--679
+[][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (27.63403pt too wide) in paragraph at lines 683--684
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.4939pt too wide) in paragraph at lines 688--689
+[][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (27.63403pt too wide) in paragraph at lines 694--695
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (7.92383pt too wide) in paragraph at lines 697--698
+[][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (80.19458pt too wide) in paragraph at lines 699--700
+[][][][][][][][][][][][][][][][][] 
+ []
+
+[23]
+Overfull \hbox (1.35376pt too wide) in paragraph at lines 717--718
+[][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (7.92383pt too wide) in paragraph at lines 722--723
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (40.77417pt too wide) in paragraph at lines 747--748
+[][][][][][][][][][][][][][][][] 
+ []
+
+[24]
+Overfull \hbox (7.92383pt too wide) in paragraph at lines 750--751
+[][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.4939pt too wide) in paragraph at lines 751--752
+[][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (53.9143pt too wide) in paragraph at lines 753--754
+[][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (27.63403pt too wide) in paragraph at lines 754--755
+[][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1.35376pt too wide) in paragraph at lines 755--756
+[][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (93.33472pt too wide) in paragraph at lines 757--758
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (7.92383pt too wide) in paragraph at lines 758--759
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 774.
+
+(/usr/share/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 774.
+ [25] (./projetmodlin.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.49994pt have occurred.
@@ -1116,13 +1297,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 5252 strings out of 493013
- 73206 string characters out of 6139316
- 185698 words of memory out of 5000000
- 8700 multiletter control sequences out of 15000+600000
+ 7010 strings out of 493013
+ 96861 string characters out of 6139316
+ 223190 words of memory out of 5000000
+ 10428 multiletter control sequences out of 15000+600000
  13660 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,12n,40p,1757b,447s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,12n,40p,1757b,1531s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/publi
@@ -1134,10 +1315,10 @@ public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></us
 r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on projetmodlin.pdf (19 pages, 367609 bytes).
+Output written on projetmodlin.pdf (25 pages, 378622 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
- 83 compressed objects within 1 object stream
+ 145 PDF objects out of 1000 (max. 8388607)
+ 96 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
